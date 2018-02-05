@@ -1,0 +1,1 @@
+# react-slider-light

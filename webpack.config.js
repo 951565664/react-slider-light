@@ -10,6 +10,13 @@ module.exports = () => {
         base = {
             entry,
             //devtool: 'inline-source-map',
+            plugins: [
+                new ExtractTextPlugin('style.css')
+                //if you want to pass in options, you can do so:
+                //new ExtractTextPlugin({
+                //  filename: 'style.css'
+                //})
+            ],
             module: {
                 rules: [
                     {
@@ -17,17 +24,24 @@ module.exports = () => {
                         exclude: /src/,
                         use: ExtractTextPlugin.extract({fallback: "style-loader", use: ["css-loader"]})
                     }, {
+                        test: /\.(css|less)$/,
+                        include: /src/,
+                        use: ExtractTextPlugin.extract({
+                            fallback: "style-loader",
+                            use: ["css-loader?modules&localIdentName=[local]-[hash:base64:5]", "less-loader"]
+                        })
+                    },  {
                         test: /\.(js|jsx)$/,
                         exclude: /node_modules/,
                         use: ['babel-loader']
                     },
                 ]
             },
-            externals: ['react','moment','react-dom','react-router','moment/locale/zh-cn'],
-            output:{
+            output: {
                 filename: 'index.js',
-                path:path.resolve(__dirname, 'lib'),
-                publicPath: ""
+                path: path.resolve(__dirname, 'lib'),
+                publicPath: "",
+                libraryTarget : 'umd'
             }
 
         };

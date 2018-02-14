@@ -6,31 +6,34 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = () => {
-    let entry = './src/index.js',
+    let entry = './example/index.js',
         base = {
             entry,
             //devtool: 'inline-source-map',
             plugins: [
-                new ExtractTextPlugin('style.css')
-                //if you want to pass in options, you can do so:
-                //new ExtractTextPlugin({
-                //  filename: 'style.css'
-                //})
+                // new ExtractTextPlugin('style.css'),
+                new ExtractTextPlugin('index.css'),
+                new webpack.NamedModulesPlugin(),
+                new webpack.HotModuleReplacementPlugin()
             ],
+            devServer: {
+                contentBase: './dist',
+                hot: true
+            },
             module: {
                 rules: [
                     {
                         test: /\.(css|less)$/,
-                        exclude: /src/,
-                        use: ExtractTextPlugin.extract({fallback: "style-loader", use: ["css-loader"]})
+                        exclude: [/src/,/example/],
+                        use: ExtractTextPlugin.extract({ fallback: "style-loader", use: ["css-loader"] })
                     }, {
                         test: /\.(css|less)$/,
-                        include: /src/,
+                        include: [/src/,/example/],
                         use: ExtractTextPlugin.extract({
                             fallback: "style-loader",
                             use: ["css-loader?modules&localIdentName=[local]-[hash:base64:5]", "less-loader"]
                         })
-                    },  {
+                    }, {
                         test: /\.(js|jsx)$/,
                         exclude: /node_modules/,
                         use: ['babel-loader']
@@ -39,9 +42,10 @@ module.exports = () => {
             },
             output: {
                 filename: 'index.js',
-                path: path.resolve(__dirname, 'lib'),
+                // path: path.resolve(__dirname, 'lib'),
+                path: path.resolve(__dirname, 'dist'),
                 publicPath: "",
-                libraryTarget : 'umd'
+                libraryTarget: 'umd'
             }
 
         };

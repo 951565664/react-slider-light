@@ -10,25 +10,42 @@ export default class Slider extends Component {
         const defaultSettings = {
             defaultSliderIndex: 0,
             sliderIndex: 0,
-            sliderToShow: 1,//每次展示的页面
-            sliderToScroll: 1,//每次滚动的页面
             delay: 1800, //ms
             speed: 500,//ms
+            sliderToShow: 1,//每次展示的页面
+            sliderToScroll: 1,//每次滚动的页面
             autoPaly: true,
             easing: 'ease',
             isDots: false,
-            dots: 'circle',//gallery square num()=>
-            dotStyle: {},
+            dots: 'circle',//gallery diamond square num()=>
+            dotStyle: {
+                listStyle: 'none',
+                display: 'inline-block',
+                margin: '0px 8px',
+                cursor: 'pointer',
+                overflow:'hidden'
+            },
+            curDotStyle: {
+                
+            },
             dotX: 'center',//'right' 'left' 'center' 20 30 -20 30
             dotY: -25,//top center
 
-            isArrows:false,
-            arrowsY:'middle',
+            isArrows: false,
+            arrowsY: 'middle',
         };
 
         this.state = {
             ...defaultSettings,
             ...props,
+            dotStyle:{
+                ...defaultSettings.dotStyle,
+                ...props.dotStyle,
+            },
+            curDotStyle:{
+                ...defaultSettings.curDotStyle,
+                ...props.curDotStyle,
+            }
         };
         this.timer = null; //定时器
     }
@@ -65,7 +82,7 @@ export default class Slider extends Component {
     trun = (num) => {
         let total = Children.count(this.props.children) || 1
 
-        let sliderIndex = ( (this.state.sliderIndex + num + (Math.ceil(Math.abs(this.state.sliderIndex + num) / total) * total) ) % total)% total;
+        let sliderIndex = ((this.state.sliderIndex + num + (Math.ceil(Math.abs(this.state.sliderIndex + num) / total) * total)) % total) % total;
 
         this.setState({
             sliderIndex,
@@ -73,11 +90,11 @@ export default class Slider extends Component {
     }
 
     dotsOnClick = (index) => {
-      this.setState({
-        sliderIndex:index
-      })
+        this.setState({
+            sliderIndex: index
+        })
     }
-    
+
     onMouseOver = () => {
         this.endSlider();
     }
@@ -93,41 +110,44 @@ export default class Slider extends Component {
         let _children = Children.toArray(children);
         let total = Children.count(this.props.children) || 1;
         let slidersStyle = {
-            width: `${total * 100}%`,
+            width: `${total/this.state.sliderToShow * 100}%`,
             height: '100%',
-            left: `-${this.state.sliderIndex * 100}%`,
+            left: `-${this.state.sliderIndex * 100 /this.state.sliderToShow}%`,
             top: '0px',
             transitionProperty: 'left',
             transitionDuration: `${this.state.speed || 0}ms`,
             transitionTimingFunction: this.state.easing
         };
         let DotsProp = {
-            dots:this.state.dots,
-            dotX:this.state.dotX,
-            dotY:this.state.dotY,
-            children:_children,
-            sliderIndex:this.state.sliderIndex,
-            dotStyle:this.state.dotStyle,
-            dotsOnClick:this.dotsOnClick
+            dots: this.state.dots,
+            dotX: this.state.dotX,
+            dotY: this.state.dotY,
+            children: _children,
+            sliderIndex: this.state.sliderIndex,
+            dotStyle: this.state.dotStyle,
+            curDotStyle: this.state.curDotStyle,
+            dotsOnClick: this.dotsOnClick,
+            sliderToShow:this.props.sliderToShow,
+
         };
         let ArrowsProp = {
-            arrowsOnClick : this.arrowsOnClick,
-            arrowsY:this.state.arrowsY,
-            arrowsX:this.state.arrowsX,
+            arrowsOnClick: this.arrowsOnClick,
+            arrowsY: this.state.arrowsY,
+            arrowsX: this.state.arrowsX,
         };
-        
+
         return (
             <div className={styles.sliderBox} style={{}} onMouseOut={this.onMouseOut} onMouseOver={this.onMouseOver}>
                 <ul className={styles.sliders} style={slidersStyle}>
                     {
-                        _children.map((child, key) => <li style={{ width: `${100 / total}%`, height: '100%', }} key={key}>{child}</li>)
+                        _children.map((child, key) => <li style={{ width: `${100 / (total)}%`, height: '100%', }} key={key}>{child}</li>)
                     }
                 </ul>
                 {
-                   this.state.isDots && <Dots {...DotsProp}/>
+                    this.state.isDots && <Dots {...DotsProp} />
                 }
                 {
-                   this.state.isArrows && <Arrows {...ArrowsProp}/>
+                    this.state.isArrows && <Arrows {...ArrowsProp} />
                 }
             </div>
         )

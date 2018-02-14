@@ -83,41 +83,63 @@ export default class Dots extends Component {
         return style;
     }
     dotsOnClick = (index) => {
-      if(typeof(this.props.dotsOnClick) === 'function'){
-          this.props.dotsOnClick(index)
-      }
+        if (typeof (this.props.dotsOnClick) === 'function') {
+            this.props.dotsOnClick(index)
+        }
     }
-    
+
     render() {
         let dotBoxStyle = this.getDotBoxStyle();
         let dotsStyle = this.getDotsStyle();
-        let dotStyle = {
-            ...this.props.dotStyle
-        };
+        let { dotStyle, curDotStyle } = this.props;
         return (
             <div className={styles.dotBox} style={dotBoxStyle}>
                 <ul className={styles.dots} style={dotsStyle}>
                     {
                         this.props.children.map(
                             (child, key) => {
+                                //gallery diamond square num()=>
                                 if (typeof (this.props.dots) === 'function') {
-                                    return this.props.dots({ item: child, index: key })
+                                    return (
+                                        <li style={this.props.sliderIndex == key ? { ...dotStyle, ...curDotStyle } : dotStyle}
+                                            key={key} onClick={() => this.dotsOnClick(key)}>
+                                            {
+                                                this.props.dots({ item: child, index: key })
+                                            }
+                                        </li>
+                                    )
 
                                 }
                                 if (typeof (this.props.dots) === 'string') {
-                                    
+                                    dotStyle = {
+                                        ...dotStyle,
+                                        width: '8px',
+                                        height: '8px',
+                                        border: '1px solid #ccc',
+                                        backgroundColor: '#fff',
+                                    };
+                                    curDotStyle= {
+                                        ...curDotStyle,
+                                        backgroundColor: '#000',
+                                    };
                                     switch (this.props.dots) {
-                                        case 'circle':
+                                        case 'circle': {
                                             dotStyle = {
+                                                ...dotStyle,
                                                 borderRadius: '50%',
-                                                width: '8px',
-                                                height: '8px',
                                             }
-                                            return (<li style={dotStyle} className={this.props.sliderIndex == key?styles.curDot:styles.dot} key={key} onClick={()=>this.dotsOnClick(key)}></li>)
+                                        }
+                                        case 'square': {
 
+                                        }
                                         default:
                                             break;
                                     }
+                                    return (
+                                        <li style={this.props.sliderIndex == key ? { ...dotStyle, ...curDotStyle } : dotStyle}
+                                            key={key} onClick={() => this.dotsOnClick(key)}>
+                                        </li>
+                                    )
 
                                 }
 

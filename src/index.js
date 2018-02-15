@@ -32,6 +32,7 @@ export default class Slider extends Component {
             dotY: -25,//top center
 
             isArrows: false,
+            arrowRender: undefined,//()=>
             arrowsY: 'middle',
         };
 
@@ -102,7 +103,7 @@ export default class Slider extends Component {
         this.beginSlider();
     }
     arrowsOnClick = (type) => {
-        let num = type === 'left' ? -1 : 1;
+        let num = type === 'backward' ? -1 : 1;
         this.trun(num);
     }
     render() {
@@ -133,7 +134,7 @@ export default class Slider extends Component {
         let ArrowsProp = {
             arrowsOnClick: this.arrowsOnClick,
             arrowsY: this.state.arrowsY,
-            arrowsX: this.state.arrowsX,
+            arrowRender: this.state.arrowRender,
         };
 
         return (

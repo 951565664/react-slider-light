@@ -8,7 +8,8 @@ export default class Arrows extends Component {
             switch (this.props.arrowsY) {
                 case 'middle':
                     style = {
-                        top: '50%'
+                        top: '50%',
+                        marginTop:`-25px`
                     }
                     break;
                 case 'top':
@@ -26,13 +27,13 @@ export default class Arrows extends Component {
             }
         }
         if (typeof (this.props.arrowsY) === 'number') {
-            if (this.props.arrowsY < 0) {
+            if (this.props.arrowsY > 0) {
                 style = {
                     top: `${this.props.arrowsY}px`,
                 }
             } else {
                 style = {
-                    bottom: `${this.props.arrowsY}px`,
+                    bottom: `${-this.props.arrowsY}px`,
                 }
             }
 
@@ -54,8 +55,8 @@ export default class Arrows extends Component {
 
         return (
             <div className={styles.arrows}>
-                <div style={arrowStyle} className={styles.arrow + ' ' + styles.left} onClick={() => this.arrowsOnClick('left')}> &lt; </div>
-                <div style={arrowStyle} className={styles.arrow + ' ' + styles.right} onClick={() => this.arrowsOnClick('right')}> &gt; </div>
+                <div style={arrowStyle} className={styles.arrow + ' ' + styles.left} onClick={() => this.arrowsOnClick('backward')}> { typeof(this.props.arrowRender) === 'function'? this.props.arrowRender('backward'):<span>&lt;</span>} </div>
+                <div style={arrowStyle} className={styles.arrow + ' ' + styles.right} onClick={() => this.arrowsOnClick('forward')}> { typeof(this.props.arrowRender) === 'function'? this.props.arrowRender('forward'):<span>&gt;</span>} </div>
             </div>
         )
     }

@@ -1,0 +1,43 @@
+.sliderBox-1MmUg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.sliderBox-1MmUg,
+.sliderBox-1MmUg * {
+  box-sizing: border-box;
+}
+.sliderBox-1MmUg .sliders--1VUu {
+  position: absolute;
+  overflow: hidden;
+}
+.sliderBox-1MmUg .sliders--1VUu li {
+  float: left;
+  list-style: none;
+}
+.dotBox-3zRnJ {
+  position: absolute;
+  width: 100%;
+}
+.dotBox-3zRnJ .dots-3rAdw {
+  overflow: hidden;
+}
+.arrows-1qk_3 {
+  height: 100%;
+  position: relative;
+}
+.arrows-1qk_3 .arrow-1kkS3 {
+  position: absolute;
+  cursor: pointer;
+  font-size: 48px;
+  color: #fff;
+  height: 50px;
+  line-height: 50px;
+}
+.arrows-1qk_3 .left-3ackY {
+  left: 0px;
+}
+.arrows-1qk_3 .right-2j20K {
+  right: 0px;
+}

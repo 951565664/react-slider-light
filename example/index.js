@@ -75,6 +75,18 @@ const sliderList = [
         code: <div>{"<Slider>{contentList.map((item, key) => (<div key={key}>{item.name}</div>))}</Slider >"}</div>,
         prop:{
             isArrows:true,
+            arrowsY:-40
+        }
+    }, {
+        title: "自定义箭头",
+        info: '利用 arrowRender  自定义箭头',
+        code: <div>{"<Slider>{contentList.map((item, key) => (<div key={key}>{item.name}</div>))}</Slider >"}</div>,
+        prop:{
+            isArrows:true,
+            arrowRender:(type)=>{
+                console.log('自定义箭头 type= ',type);
+                return <span style={{fontSize:'14px'}}>{type}</span>
+            }
         }
     },
 ]
@@ -121,7 +133,6 @@ export default class Wrapper extends Component {
         )
     }
 }
-
 
 ReactDOM.render(
     <Wrapper />,

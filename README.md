@@ -99,7 +99,7 @@ Props | Type | Default Value | Description | Required
 `dotX`      | `string`or `number`          | `center` |dot的水平位置 ，可以是```right``` ```left``` ```center```这样的字符串 ,也可以是 30 -20, 表示距离左边的像素，负数表示距右边的像素| No
 `dotY`      | `string`or `number`          | `middle` |dot的垂直位置 ，可以是```top``` ```bottom``` ```middle```这样的字符串 ,也可以是 30 -20, 表示距离底部的像素，负数表示距顶部的像素| No
 `isArrows`      | `bool`          | `false` | 是否需要箭头 | No
-`arrowRender`      | `func`          | `null` | 箭头的渲染函数  (type='backward | forward')=>{} | No 
+`arrowRender`      | `func`          | `null` | 箭头的渲染函数  ```(type)=>{//type:'backward ' .'forward'}``` | No 
 `arrowsY`      | `string`or `number`          | `middle` |arrows的垂直位置 ，可以是```top``` ```bottom``` ```middle```这样的字符串 ,也可以是 30 -20, 表示距离底部的像素，负数表示距顶部的像素| No
 ### Filing issues
 Please replicate your issue with [CodeSandbox template](https://codesandbox.io/s/zzloxr09mp) and post it along with issue to make it easy for me to debug.

@@ -1,34 +1,41 @@
 # react-slider-light
-[以中文查看](./README_zh-CN.md)
 
 a lightweight Slider component built with [react](https://github.com/facebook/react). 
-
+一个轻量级的 [react](https://github.com/facebook/react) 轮播组件
 ---
 
 ## Table of Contents
 
-* [Features](#features)
-* [Demos](#demos)
-* [Getting Started](#getting-started)
+* [Features特性](#features)
+* [Demos演示](#demos)
+* [Getting Started快速开始](#getting-started)
+  *  [Install](#install)
+  *  [Use](#use)
+  *  [Development](#development)
+  *  [Props](#props)
 
 ## Features
 
-* **Easy to use**: detailed documents and examples
-* **Support custom**: Can change style,such as dots and arrows 
+* **Easy to use 使用简单**: detailed documents and examples 详细的文档和例子
+* **Support custom 支持自定义**: Can change style,such as dots and arrows 能够改变样式位置，例如 分页符和箭头
 
 
 ## Demos
 
-[Demos and codes](https://stackblitz.com/edit/dva-example-count)
+[Demos and codes 演示和代码](https://stackblitz.com/edit/dva-example-count)
 
 ## Getting Started
 
 #### Install.
 Important: be sure that you have installed [react](https://github.com/facebook/react). 
+
+重要提醒：请确保先安装了 [react](https://github.com/facebook/react). 
+
 ```bash
 # Install
 $ npm install react-slider-light
 ```
+
 #### Use.
 ```js
 import React, { Component } from 'react';

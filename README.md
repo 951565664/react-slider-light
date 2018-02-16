@@ -26,7 +26,7 @@ a lightweight Slider component built with [react](https://github.com/facebook/re
 
 ## Getting Started
 
-#### Install.
+#### Install
 Important: be sure that you have installed [react](https://github.com/facebook/react). 
 
 重要提醒：请确保先安装了 [react](https://github.com/facebook/react). 
@@ -36,7 +36,7 @@ Important: be sure that you have installed [react](https://github.com/facebook/r
 $ npm install react-slider-light
 ```
 
-#### Use.
+#### Use
 ```js
 import React, { Component } from 'react';
 import Slider from 'react-slider-light';
@@ -51,9 +51,9 @@ export default class Wrapper extends Component {
 }
 ```
 
-#### Development.
+#### Development
 
-Want to run demos locally
+Want to run demos locally 本地启动演示
 ```bash
 git clone https://github.com/951565664/react-slider-light.git
 cd react-slick
@@ -61,81 +61,78 @@ npm install
 npm start
 open http://localhost:8080
 ```
-[more example](https://stackblitz.com/edit/dva-example-count)
+[more example 更多例子](https://stackblitz.com/edit/dva-example-count)
 
 #### Props
 
-Props            | Type            | Default Value                   | Description                                                 | Working
----------------- | --------------- | ------------------------------- | -----------                                                 | -------
-`accessibility`  | `bool`          | `true`                          | Enable tabbing and arrow key navigation                     | Yes
-`className`      | `string`        | `''`                            | CSS class for inner slider div                              | Yes
-`adaptiveHeight` | `bool`          | `false`                         | Adjust the slide's height automatically                     | Yes
-`arrows`         | `bool`          | `true`                          |                                                             | Yes
-`nextArrow`      | React Element   | `null`                          | React element for next arrow. [Example](examples/CustomArrows.js)       | Yes
-`prevArrow`      | React Element   | `null`                          | React element for prev arrow. [Example](examples/CustomArrows.js)       | Yes
-`autoplay`       | `bool`          | `false`                         |                                                             | Yes
-`autoplaySpeed`  | `int`           | `3000`                          | Delay between each auto scroll (in milliseconds)            | Yes
-`centerMode`     | `bool`          | `false`                         | Center current slide                                        | Yes
-`centerPadding`  |                 | `'50px'`                        |                                                             |
-`cssEase`        |                 | `'ease'`                        |                                                             |
-`customPaging`   | `func`          | `i => <button>{i + 1}</button>` | Custom paging templates. [Example](examples/CustomPaging.js)            | Yes
-`dots`           | `bool`          | `Default`                       |                                                             | Yes
-`dotsClass`      | `string`        | `'slick-dots'`                  | CSS class for dots                                          | Yes
-`draggable`      | `bool`          | `true`                          | Enable scrollable via dragging on desktop                   | Yes
-`easing`         | `string`        | `'linear'`                      |                                                             |
-`fade`           | `bool`          | `Default`                       |                                                             | Yes
-`focusOnSelect`  | `bool`          | `false`                         | Go to slide on click                                        | Yes
-`infinite`       | `bool`          | `true`                          | Infinitely wrap around contents                             | Yes
-`initialSlide`   | `int`           | `0`                             | Index of first slide                                        | Yes
-`lazyLoad`       | `bool`          | `false`                         | Load images or render components on demand                  | Yes
-`pauseOnHover`   | `bool`          | `true`                          | Prevents autoplay while hovering                            | Yes
-`responsive`     | `array`         | `null`                          | Customize based on breakpoints (detailed explanation below) | Yes
-`rtl`            | `bool`          | `false`                         | Reverses the slide order                                    | Yes
-`slide`          | `string`        | `'div'`                         |                                                             |
-`slidesToShow`   | `int`           | `1`                             | Yes                                                         | Yes
-`slidesToScroll` | `int`           | `1`                             |                                                             |
-`speed`          | `int`           | `500`                           |                                                             |
-`swipe`          | `bool`          | `true`                          |                                                             |
-`swipeToSlide`   | `bool`          | `false`                         | Enable drag/swpie irrespective of `slidesToScroll`          | Yes
-`touchMove`      | `bool`          | `true`                          |                                                             |
-`touchThreshold` | `int`           | `5`                             |                                                             |
-`variableWidth`  | `bool`          | `false`                         |                                                             |
-`useCSS`         | `bool`          | `true`                          | Enable/Disable CSS Transitions                              | Yes
-`vertical`       | `bool`          | `false`                         |                                                             | Yes
-`init`           | `func`          | `null`                          | componentWillMount callback. `() => void`                       | Yes
-`afterChange`    | `func`          | `Default`                       | Index change callback. `index => ...`                       | Yes
-`beforeChange`   | `func`          | `null`                          | Index change callback. `(oldIndex, newIndex) => ...`        | Yes
-`slickGoTo`      | `int`           | `Default`                       | Go to the specified slide number                            |
+            easing: 'ease',
+            isDots: false,
+            dots: 'circle',//gallery diamond square num()=>
+            dotStyle: {
+                listStyle: 'none',
+                display: 'inline-block',
+                margin: '0px 8px',
+                cursor: 'pointer',
+                overflow:'hidden'
+            },
+            curDotStyle: {
+                
+            },
+            dotX: 'center',//'right' 'left' 'center' 20 30 -20 30
+            dotY: -25,//top center
 
+            isArrows: false,
+            arrowRender: undefined,//()=>
+            arrowsY: 'middle',
+Props | Type | Default Value | Description | Required
+---------------- | --------------- | ------------------------------- | ----------- | -------
+`defaultSliderIndex`  | `number` | `0` | 默认初始滑动开始位置 | No
+`sliderIndex`         | `number` | `0` | 控制滑动的页面 | No
+`delay`      | `number`          | `1800` | 延迟的时间 (ms) | No
+`speed`      | `number`          | `500` | 延迟的时间 (ms)| No
+`sliderToShow`      | `number`          | `1` | 每次展示页面 | No
+`sliderToScroll`      | `number`          | `1` | 每次滚动的页面数量 | No
+`autoPaly`      | `bool`          | `true` | 是否自动开始轮播 | No
+`isDots`      | `bool`          | `false` | 是否需要dots | No
+`dots`      | `enum|func`          | `circle` | dots 的种类，值为circle,gallery,diamond,square,({index,item})=>{ return ReactDom} | No
+`dotStyle`      | `object`          | ```{
+                listStyle: 'none',
+                display: 'inline-block',
+                margin: '0px 8px',
+                cursor: 'pointer',
+                overflow:'hidden'
+            }``` | dots 的样式
+
+`dotX`      | `string|number`          | `center` |dot的水平位置 ，可以是```right``` ```left``` ```center```这样的字符串 ,也可以是 30 -20, 表示距离左边的像素，负数表示距右边的像素| No
+`dotY`      | `string|number`          | `middle` |dot的垂直位置 ，可以是```top``` ```bottom``` ```middle```这样的字符串 ,也可以是 30 -20, 表示距离底部的像素，负数表示距顶部的像素| No
+`isArrows`      | `bool`          | `false` | 是否需要箭头 | No
+`arrowRender`      | `func`          | `null` | 箭头的渲染函数  (type='backward | forward')=>{} | No 
+`arrowsY`      | `string|number`          | `middle` |arrows的垂直位置 ，可以是```top``` ```bottom``` ```middle```这样的字符串 ,也可以是 30 -20, 表示距离底部的像素，负数表示距顶部的像素| No
 ### Filing issues
 Please replicate your issue with [CodeSandbox template](https://codesandbox.io/s/zzloxr09mp) and post it along with issue to make it easy for me to debug.
 
 ## FAQ
 
-#### Will be updated regularly??
-
-> 当然会，至少每周会抽出4个小时来维护和开发
+#### Will be updated regularly? 是否会经常更新
 
 > Of course, at least 4 hours a week will be taken out for maintenance and development
+> 当然会，至少每周会抽出4个小时来维护和开发
 
+#### Does it support IE8?是否支持 IE 8
 
-#### Does it support IE8?
-
-No.
+No. 想多了老铁
 
 ## Next
 
-Some basic function.
+Add some basic function.增加一些基本功能
 
-* Scroll vertically
+* Scroll vertically 垂直滚动
 * gallery 缩略图
 
 
 Want more?
 
-* [作者的其他项目](https://github.com/951565664)
-* [The author's other projects](https://github.com/951565664)
-
+* [The author's other projects 作者的其他项目](https://github.com/951565664)
 
 ## License
 

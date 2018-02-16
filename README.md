@@ -96,11 +96,11 @@ Props | Type | Default Value | Description | Required
 `isDots`      | `bool`          | `false` | 是否需要dots | No
 `dots`      | `enum|func`          | `circle` | dots 的种类，值为circle,gallery,diamond,square,({index,item})=>{ return ReactDom} | No
 `dotStyle`      | `object`          | ```{listStyle: 'none',display: 'inline-block',margin: '0px 8px',cursor: 'pointer',overflow:'hidden'}``` | dots 的样式
-`dotX`      | `string|number`          | `center` |dot的水平位置 ，可以是```right``` ```left``` ```center```这样的字符串 ,也可以是 30 -20, 表示距离左边的像素，负数表示距右边的像素| No
-`dotY`      | `string|number`          | `middle` |dot的垂直位置 ，可以是```top``` ```bottom``` ```middle```这样的字符串 ,也可以是 30 -20, 表示距离底部的像素，负数表示距顶部的像素| No
+`dotX`      | `string`or `number`          | `center` |dot的水平位置 ，可以是```right``` ```left``` ```center```这样的字符串 ,也可以是 30 -20, 表示距离左边的像素，负数表示距右边的像素| No
+`dotY`      | `string`or `number`          | `middle` |dot的垂直位置 ，可以是```top``` ```bottom``` ```middle```这样的字符串 ,也可以是 30 -20, 表示距离底部的像素，负数表示距顶部的像素| No
 `isArrows`      | `bool`          | `false` | 是否需要箭头 | No
 `arrowRender`      | `func`          | `null` | 箭头的渲染函数  (type='backward | forward')=>{} | No 
-`arrowsY`      | `string|number`          | `middle` |arrows的垂直位置 ，可以是```top``` ```bottom``` ```middle```这样的字符串 ,也可以是 30 -20, 表示距离底部的像素，负数表示距顶部的像素| No
+`arrowsY`      | `string`or `number`          | `middle` |arrows的垂直位置 ，可以是```top``` ```bottom``` ```middle```这样的字符串 ,也可以是 30 -20, 表示距离底部的像素，负数表示距顶部的像素| No
 ### Filing issues
 Please replicate your issue with [CodeSandbox template](https://codesandbox.io/s/zzloxr09mp) and post it along with issue to make it easy for me to debug.
 

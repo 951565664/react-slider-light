@@ -65,25 +65,6 @@ open http://localhost:8080
 
 #### Props
 
-            easing: 'ease',
-            isDots: false,
-            dots: 'circle',//gallery diamond square num()=>
-            dotStyle: {
-                listStyle: 'none',
-                display: 'inline-block',
-                margin: '0px 8px',
-                cursor: 'pointer',
-                overflow:'hidden'
-            },
-            curDotStyle: {
-                
-            },
-            dotX: 'center',//'right' 'left' 'center' 20 30 -20 30
-            dotY: -25,//top center
-
-            isArrows: false,
-            arrowRender: undefined,//()=>
-            arrowsY: 'middle',
 Props | Type | Default Value | Description | Required
 ---------------- | --------------- | ------------------------------- | ----------- | -------
 `defaultSliderIndex`  | `number` | `0` | 默认初始滑动开始位置 | No

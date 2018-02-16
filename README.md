@@ -98,13 +98,13 @@ No. 想多了老铁
 
 ## Next
 
-Add some basic function.增加一些基本功能
+#### Add some basic function.增加一些基本功能
 
 * Scroll vertically 垂直滚动
 * gallery 缩略图
 
 
-Want more?
+#### Want more?
 
 * [The author's other projects 作者的其他项目](https://github.com/951565664)
 

@@ -95,14 +95,7 @@ Props | Type | Default Value | Description | Required
 `autoPaly`      | `bool`          | `true` | 是否自动开始轮播 | No
 `isDots`      | `bool`          | `false` | 是否需要dots | No
 `dots`      | `enum|func`          | `circle` | dots 的种类，值为circle,gallery,diamond,square,({index,item})=>{ return ReactDom} | No
-`dotStyle`      | `object`          | ```{
-                listStyle: 'none',
-                display: 'inline-block',
-                margin: '0px 8px',
-                cursor: 'pointer',
-                overflow:'hidden'
-            }``` | dots 的样式
-
+`dotStyle`      | `object`          | ```{listStyle: 'none',display: 'inline-block',margin: '0px 8px',cursor: 'pointer',overflow:'hidden'}``` | dots 的样式
 `dotX`      | `string|number`          | `center` |dot的水平位置 ，可以是```right``` ```left``` ```center```这样的字符串 ,也可以是 30 -20, 表示距离左边的像素，负数表示距右边的像素| No
 `dotY`      | `string|number`          | `middle` |dot的垂直位置 ，可以是```top``` ```bottom``` ```middle```这样的字符串 ,也可以是 30 -20, 表示距离底部的像素，负数表示距顶部的像素| No
 `isArrows`      | `bool`          | `false` | 是否需要箭头 | No

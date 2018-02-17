@@ -71,7 +71,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e6608c52f6b089f538d4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "47976b5df9439648ad8a"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -1055,7 +1055,6 @@ var sliderList = [{
     prop: {
         isArrows: true,
         arrowRender: function arrowRender(type) {
-            console.log('自定义箭头 type= ', type);
             return _react2.default.createElement(
                 'span',
                 { style: { fontSize: '14px' } },

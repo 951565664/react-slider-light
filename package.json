@@ -7,8 +7,9 @@
     "lib": "lib"
   },
   "scripts": {
+    "buildPublish": "set NODE_ENV=buildPublish&set NODE_ENV=commit&webpack",
     "build": "webpack",
-    "start": "set NODE_ENV=start&webpack-dev-server --open"
+    "start": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "url": "https://github.com/951565664/react-slider-light/issues"
   },
   "dependencies": {
+    "http-server": "^0.11.1",
     "react": "^15.4.0",
     "react-dom": "^15.4.0"
   },

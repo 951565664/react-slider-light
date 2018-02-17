@@ -2,6 +2,7 @@
 
 a lightweight Slider component built with [react](https://github.com/facebook/react). 
 一个轻量级的 [react](https://github.com/facebook/react) 轮播组件
+
 ---
 
 ## Table of Contents

@@ -7,7 +7,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = () => {
     let base = {
             // entry:'./example/index.js',
-            entry:env=='start'?'./example/index.js':'./src/index.js',
+            entry:env=='buildPublish'?'./src/index.js':'./example/index.js',
             //devtool: 'inline-source-map',
             plugins: [
                 // new ExtractTextPlugin('style.css'),
@@ -41,7 +41,7 @@ module.exports = () => {
             },
             output: {
                 filename: 'index.js',
-                path: env=='start'?path.resolve(__dirname, 'dist'):path.resolve(__dirname, 'lib'),
+                path: env=='buildPublish'?path.resolve(__dirname, 'lib'):path.resolve(__dirname, 'dist'),
                 // path: path.resolve(__dirname, 'dist'),
                 publicPath: "",
                 libraryTarget: 'umd'

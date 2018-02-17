@@ -85,7 +85,6 @@ const sliderList = [
         prop: {
             isArrows: true,
             arrowRender: (type) => {
-                console.log('自定义箭头 type= ', type);
                 return <span style={{ fontSize: '14px' }}>{type}</span>
             }
         }

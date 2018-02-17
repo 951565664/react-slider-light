@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 // import * as Example from './routers'
 import styles from './index.less'
 
-// import Slider from '../src'
-import Slider from 'react-slider-light'
+import Slider from '../src'
+// import Slider from 'react-slider-light'
 import ExampleCode from './components/exampleCode'
 import Info from './components/info'
 

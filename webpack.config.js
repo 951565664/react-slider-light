@@ -1,5 +1,4 @@
 const env = process.env.NODE_ENV;
-const commit = process.env.COMMIT;
 
 const path = require('path');
 const webpack = require('webpack');
@@ -8,7 +7,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = () => {
     let base = {
             // entry:'./example/index.js',
-            entry:'./src/index.js',
+            entry:env=='start'?'./example/index.js':'./src/index.js',
             //devtool: 'inline-source-map',
             plugins: [
                 // new ExtractTextPlugin('style.css'),
@@ -42,7 +41,7 @@ module.exports = () => {
             },
             output: {
                 filename: 'index.js',
-                path: path.resolve(__dirname, 'lib'),
+                path: env=='start'?path.resolve(__dirname, 'dist'):path.resolve(__dirname, 'lib'),
                 // path: path.resolve(__dirname, 'dist'),
                 publicPath: "",
                 libraryTarget: 'umd'

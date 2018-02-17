@@ -1,6 +1,6 @@
 {
   "name": "react-slider-light",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a light easy slider for react",
   "main": "./lib/index.js",
   "directories": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --open"
+    "start": "set NODE_ENV=start&webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
@@ -16,9 +16,12 @@
   },
   "keywords": [
     "react",
+    "reactjs",
     "slider",
     "slick",
-    "carousel"
+    "carousel",
+    "javascript",
+    "react-component"
   ],
   "author": "951565664 小哈",
   "license": "ISC",

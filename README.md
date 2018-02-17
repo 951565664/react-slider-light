@@ -23,7 +23,7 @@ a lightweight Slider component built with [react](https://github.com/facebook/re
 
 ## Demos
 
-[Demos and codes 演示和代码](https://stackblitz.com/edit/dva-example-count)
+[Demos and codes 演示和代码](https://951565664.github.io/react-slider-light/)
 
 ## Getting Started
 
@@ -62,7 +62,7 @@ npm install
 npm start
 open http://localhost:8080
 ```
-[more example 更多例子](https://stackblitz.com/edit/dva-example-count)
+[more example 更多例子](https://951565664.github.io/react-slider-light/)
 
 #### Props
 

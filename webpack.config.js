@@ -16,7 +16,7 @@ module.exports = () => {
                 new webpack.HotModuleReplacementPlugin()
             ],
             devServer: {
-                contentBase: './dist',
+                contentBase: './docs',
                 hot: true
             },
             module: {
@@ -41,8 +41,8 @@ module.exports = () => {
             },
             output: {
                 filename: 'index.js',
-                path: env=='buildPublish'?path.resolve(__dirname, 'lib'):path.resolve(__dirname, 'dist'),
-                // path: path.resolve(__dirname, 'dist'),
+                path: env=='buildPublish'?path.resolve(__dirname, 'lib'):path.resolve(__dirname, 'docs'),
+                // path: path.resolve(__dirname, 'docs'),
                 publicPath: "",
                 libraryTarget: 'umd'
             }

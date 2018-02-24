@@ -106,10 +106,12 @@ export default class Wrapper extends Component {
         return (
             <div className={styles.wrapper}>
                 <div className={styles.forkMe} >
-                    <img
-                        src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67"
-                        alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"
-                    />
+                    <a href="https://github.com/bulma-preact/bulma-preact" target="_">
+                        <img
+                            src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67"
+                            alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"
+                        />
+                    </a>
                 </div>
                 <div className={styles.exampleBox} >
                     <p>代码排版和样式暂时比较乱，现成的浏览器代码排版组件还真没找到，作者打算自己写个框架，来支持浏览器高亮代码</p>

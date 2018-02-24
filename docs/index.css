@@ -6,14 +6,15 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  position: relative;
 }
 .wrapper-1MpWX .exampleBox-1GtS2 {
   overflow: hidden;
   position: relative;
   border: 1px solid #ccc;
-  width: 90%;
+  width: 88%;
   box-sizing: border-box;
-  margin: 10px 5%;
+  margin: 10px 6%;
 }
 .wrapper-1MpWX .exampleBox-1GtS2 p {
   line-height: 24px;
@@ -25,6 +26,11 @@
 .wrapper-1MpWX .sliderBox-3VkIG {
   border: 1px solid #ccc;
   height: 350px;
+}
+.wrapper-1MpWX .forkMe-2nyxS {
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 .sliderBox-1MmUg {
   position: relative;

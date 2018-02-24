@@ -15,7 +15,7 @@ const propToStringForCode = (obj) => {
         rtnStr += ` ${key}={${value}}`
     }
     rtnStr += '>'
-    return <div>{rtnStr}<br/>{'<div>1</div>'}<br/>{'<div>2</div>'}<br/>{'<div>3</div>'}<br/>{'</Slider>'}</div>
+    return <div>{rtnStr}<br />{'<div>1</div>'}<br />{'<div>2</div>'}<br />{'<div>3</div>'}<br />{'</Slider>'}</div>
 }
 const sliderList = [
     {
@@ -91,7 +91,7 @@ const sliderList = [
     },
 ].map((item) => ({
     ...item,
-    code:propToStringForCode(item.prop),
+    code: propToStringForCode(item.prop),
 }))
 const contentList = [
     { name: 'content1' },
@@ -105,10 +105,15 @@ export default class Wrapper extends Component {
     render() {
         return (
             <div className={styles.wrapper}>
-                
+                <div className={styles.forkMe} >
+                    <img
+                        src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67"
+                        alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"
+                    />
+                </div>
                 <div className={styles.exampleBox} >
-                <p>代码排版和样式暂时比较乱，现成的浏览器代码排版组件还真没找到，作者打算自己写个框架，来支持浏览器高亮代码</p>
-                <p>如果大家有好的浏览器代码排版组件，请推荐给我，请多多支持，多多star</p>
+                    <p>代码排版和样式暂时比较乱，现成的浏览器代码排版组件还真没找到，作者打算自己写个框架，来支持浏览器高亮代码</p>
+                    <p>如果大家有好的浏览器代码排版组件，请推荐给我，请多多支持，多多star</p>
                 </div>
                 {
                     sliderList.map(({ title, info, code, prop }, key) => (

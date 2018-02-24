@@ -71,7 +71,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "be2aee41bbb1af87ac7a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d05796ee144a784e16b3"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -1089,7 +1089,7 @@ var Wrapper = function (_Component) {
                     { className: _index2.default.forkMe },
                     _react2.default.createElement(
                         'a',
-                        { href: 'https://github.com/bulma-preact/bulma-preact', target: '_' },
+                        { href: 'https://github.com/951565664/react-slider-light', target: '_' },
                         _react2.default.createElement('img', {
                             src: 'https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67',
                             alt: 'Fork me on GitHub', 'data-canonical-src': 'https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png'

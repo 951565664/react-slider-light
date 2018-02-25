@@ -19,7 +19,7 @@ a lightweight Slider component built with [react](https://github.com/facebook/re
 
 * **Easy to use 使用简单**: detailed documents and examples 详细的文档和例子
 * **Support custom 支持自定义**: Can change style,such as dots and arrows 能够改变样式位置，例如 分页符和箭头
-
+* **Support vertical 支持竖直**
 
 ## Demos
 
@@ -76,6 +76,7 @@ Props | Type | Default Value | Description | Required
 `sliderToScroll`      | `number`          | `1` | 每次滚动的页面数量 | No
 `autoPaly`      | `bool`          | `true` | 是否自动开始轮播 | No
 `isDots`      | `bool`          | `false` | 是否需要dots | No
+`vertical`      | `bool`          | `false` | 是否垂直滚动 | No
 `dots`      | `enum` or `func`          | `circle` | dots 的种类，值为circle,gallery,diamond,square,({index,item})=>{ return ReactDom} | No
 `dotStyle`      | `object`          | ```{listStyle: 'none',display: 'inline-block',margin: '0px 8px',cursor: 'pointer',overflow:'hidden'}``` | dots 的样式
 `dotX`      | `string` or `number`          | `center` |dot的水平位置 ，可以是```right``` ```left``` ```center```这样的字符串 ,也可以是 30 -20, 表示距离左边的像素，负数表示距右边的像素| No
@@ -85,6 +86,16 @@ Props | Type | Default Value | Description | Required
 `arrowsY`      | `string` or `number`          | `middle` |arrows的垂直位置 ，可以是```top``` ```bottom``` ```middle```这样的字符串 ,也可以是 30 -20, 表示距离底部的像素，负数表示距顶部的像素| No
 ### Filing issues
 Please replicate your issue with [CodeSandbox template](https://codesandbox.io/s/zzloxr09mp) and post it along with issue to make it easy for me to debug.
+
+## Change Log
+
+#### 1.0.1
+ `2018-2-15`
+ 
+#### 2.0.1
+ `2018-2-25`
+-	增加垂直滚动
+-	修改不支持ie9的bug
 
 ## FAQ
 
@@ -101,7 +112,7 @@ No. 想多了老铁
 
 #### Add some basic function.增加一些基本功能
 
-* Scroll vertically 垂直滚动
+<!-- * Scroll vertically 垂直滚动 -->
 * gallery 缩略图
 
 

@@ -71,7 +71,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "d05796ee144a784e16b3"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f4d48cd9137b2c19b13e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -1061,6 +1061,15 @@ var sliderList = [{
                 type
             );
         }
+    }
+}, {
+    title: "竖直滑动",
+    info: '利用 vertical  竖直滑动',
+    prop: {
+        isDots: true,
+        vertical: true,
+        dotX: -40,
+        dotY: 'bottom'
     }
 }].map(function (item) {
     return _extends({}, item, {
@@ -23591,76 +23600,158 @@ var Dots = function (_Component) {
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Dots.__proto__ || Object.getPrototypeOf(Dots)).call.apply(_ref, [this].concat(args))), _this), _this.getDotsStyle = function () {
             var style = {};
-            if (typeof _this.props.dotX === 'string') {
-                switch (_this.props.dotX) {
-                    case 'center':
-                        style = {
-                            textAlign: 'center'
-                        };
-                        break;
-                    case 'left':
-                        style = {
-                            textAlign: 'left',
-                            marginLeft: '20px'
-                        };
-                        break;
-                    case 'right':
-                        style = {
-                            textAlign: 'right',
-                            marginRight: '20px'
-                        };
-                        break;
-                    default:
-                        break;
+            if (_this.props.vertical) {
+                style = {
+                    // height: '100%',
+
+                };
+                if (typeof _this.props.dotY === 'string') {
+                    switch (_this.props.dotY) {
+                        case 'top':
+                            style = _extends({}, style, {
+                                top: '20px'
+                            });
+                            break;
+                        case 'middle':
+                            style = _extends({}, style, {
+                                top: '50%',
+                                transform: 'translate(-50%,-50%)',
+                                msTransform: 'translate(-50%,-50%)'
+                            });
+                            break;
+                        case 'bottom':
+                            style = _extends({}, style, {
+                                bottom: '20px'
+                            });
+                            break;
+                        default:
+                            break;
+                    }
                 }
-            }
-            if (typeof _this.props.dotX === 'number') {
-                if (_this.props.dotX < 0) {
-                    style = {
-                        textAlign: 'right',
-                        marginRight: _this.props.dotX * -1 + 'px'
-                    };
-                } else {
-                    style = {
-                        textAlign: 'left',
-                        marginLeft: _this.props.dotX + 'px'
-                    };
+                if (typeof _this.props.dotY === 'number') {
+                    if (_this.props.dotY < 0) {
+                        style = _extends({}, style, {
+                            bottom: _this.props.dotY * -1 + 'px'
+                        });
+                    } else {
+                        style = _extends({}, style, {
+                            top: _this.props.dotY + 'px'
+                        });
+                    }
+                }
+            } else {
+                if (typeof _this.props.dotX === 'string') {
+                    switch (_this.props.dotX) {
+                        case 'center':
+                            style = _extends({}, style, {
+                                textAlign: 'center'
+                            });
+                            break;
+                        case 'left':
+                            style = _extends({}, style, {
+                                textAlign: 'left',
+                                marginLeft: '20px'
+                            });
+                            break;
+                        case 'right':
+                            style = _extends({}, style, {
+                                textAlign: 'right',
+                                marginRight: '20px'
+                            });
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                if (typeof _this.props.dotX === 'number') {
+                    if (_this.props.dotX < 0) {
+                        style = _extends({}, style, {
+                            textAlign: 'right',
+                            marginRight: _this.props.dotX * -1 + 'px'
+                        });
+                    } else {
+                        style = _extends({}, style, {
+                            textAlign: 'left',
+                            marginLeft: _this.props.dotX + 'px'
+                        });
+                    }
                 }
             }
             return style;
         }, _this.getDotBoxStyle = function () {
             var style = {};
-            if (typeof _this.props.dotY === 'string') {
-                switch (_this.props.dotY) {
-                    case 'top':
-                        style = {
-                            top: '20px'
-                        };
-                        break;
-                    case 'middle':
-                        style = {
-                            top: '50%',
-                            marginTop: '-20px'
-                        };
-                        break;
-                    case 'bottom':
-                        style = {
-                            bottom: '20px'
-                        };
-                        break;
-                    default:
-                        break;
+            if (_this.props.vertical) {
+                style = _extends({}, style, {
+                    height: '100%',
+                    dispaly: 'inline-block',
+                    width: 'auto'
+                });
+                if (typeof _this.props.dotX === 'string') {
+                    switch (_this.props.dotX) {
+                        case 'center':
+                            style = _extends({}, style, {
+                                left: '50%',
+                                marginLeft: '-20px'
+                            });
+                            break;
+                        case 'left':
+                            style = _extends({}, style, {
+                                left: '20px'
+                            });
+                            break;
+                        case 'right':
+                            style = _extends({}, style, {
+                                right: '20px'
+                            });
+                            break;
+                        default:
+                            break;
+                    }
                 }
-            }
-            if (typeof _this.props.dotY === 'number') {
-                if (_this.props.dotY < 0) {
-                    style = {
-                        bottom: _this.props.dotY * -1 + 'px'
-                    };
-                } else {
-                    style = {
-                        top: _this.props.dotY + 'px'
-                    };
+                if (typeof _this.props.dotX === 'number') {
+                    if (_this.props.dotX < 0) {
+                        style = _extends({}, style, {
+                            right: _this.props.dotX * -1 + 'px'
+                        });
+                    } else {
+                        style = _extends({}, style, {
+                            left: _this.props.dotX + 'px'
+                        });
+                    }
+                }
+            } else {
+                if (typeof _this.props.dotY === 'string') {
+                    switch (_this.props.dotY) {
+                        case 'top':
+                            style = _extends({}, style, {
+                                top: '20px'
+                            });
+                            break;
+                        case 'middle':
+                            style = _extends({}, style, {
+                                top: '50%',
+                                marginTop: '-20px'
+                            });
+                            break;
+                        case 'bottom':
+                            style = _extends({}, style, {
+                                bottom: '20px'
+                            });
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                if (typeof _this.props.dotY === 'number') {
+                    if (_this.props.dotY < 0) {
+                        style = _extends({}, style, {
+                            bottom: _this.props.dotY * -1 + 'px'
+                        });
+                    } else {
+                        style = _extends({}, style, {
+                            top: _this.props.dotY + 'px'
+                        });
+                    }
                 }
             }
             return style;
@@ -23859,7 +23950,7 @@ var Slider = function (_Component) {
             dotStyle: {
                 listStyle: 'none',
                 display: 'inline-block',
-                margin: '0px 8px',
+                margin: '8px',
                 cursor: 'pointer',
                 overflow: 'hidden'
             },
@@ -23869,11 +23960,14 @@ var Slider = function (_Component) {
 
             isArrows: false,
             arrowRender: undefined, //()=>
-            arrowsY: 'middle'
+            arrowsY: 'middle',
+            vertical: false
         };
 
         _this.state = _extends({}, defaultSettings, props, {
-            dotStyle: _extends({}, defaultSettings.dotStyle, props.dotStyle),
+            dotStyle: _extends({}, defaultSettings.dotStyle, props.dotStyle, {
+                display: !!props.vertical ? 'block' : 'inline-block'
+            }),
             curDotStyle: _extends({}, defaultSettings.curDotStyle, props.curDotStyle)
         });
         _this.timer = null; //定时器
@@ -23898,20 +23992,23 @@ var Slider = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var children = this.props.children;
 
             var _children = _react.Children.toArray(children);
             var total = _react.Children.count(this.props.children) || 1;
             var slidersStyle = {
-                width: total / this.state.sliderToShow * 100 + '%',
-                height: '100%',
-                left: '-' + this.state.sliderIndex * 100 / this.state.sliderToShow + '%',
-                top: '0px',
-                transitionProperty: 'left',
+                width: this.state.vertical ? '100%' : total / this.state.sliderToShow * 100 + '%',
+                height: !this.state.vertical ? '100%' : total / this.state.sliderToShow * 100 + '%',
+                left: this.state.vertical ? '0px' : '-' + this.state.sliderIndex * 100 / this.state.sliderToShow + '%',
+                top: !this.state.vertical ? '0px' : '-' + this.state.sliderIndex * 100 / this.state.sliderToShow + '%',
+                transitionProperty: this.state.vertical ? 'top' : 'left',
                 transitionDuration: (this.state.speed || 0) + 'ms',
                 transitionTimingFunction: this.state.easing
             };
             var DotsProp = {
+                vertical: this.state.vertical,
                 dots: this.state.dots,
                 dotX: this.state.dotX,
                 dotY: this.state.dotY,
@@ -23921,7 +24018,6 @@ var Slider = function (_Component) {
                 curDotStyle: this.state.curDotStyle,
                 dotsOnClick: this.dotsOnClick,
                 sliderToShow: this.props.sliderToShow
-
             };
             var ArrowsProp = {
                 arrowsOnClick: this.arrowsOnClick,
@@ -23938,7 +24034,10 @@ var Slider = function (_Component) {
                     _children.map(function (child, key) {
                         return _react2.default.createElement(
                             'li',
-                            { style: { width: 100 / total + '%', height: '100%' }, key: key },
+                            { style: {
+                                    width: _this2.state.vertical ? '100%' : 100 / total + '%',
+                                    height: !_this2.state.vertical ? '100%' : 100 / total + '%'
+                                }, key: key },
                             child
                         );
                     })

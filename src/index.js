@@ -21,7 +21,7 @@ export default class Slider extends Component {
             dotStyle: {
                 listStyle: 'none',
                 display: 'inline-block',
-                margin: '0px 8px',
+                margin: '8px',
                 cursor: 'pointer',
                 overflow:'hidden'
             },
@@ -34,6 +34,7 @@ export default class Slider extends Component {
             isArrows: false,
             arrowRender: undefined,//()=>
             arrowsY: 'middle',
+            vertical:false,
         };
 
         this.state = {
@@ -42,6 +43,7 @@ export default class Slider extends Component {
             dotStyle:{
                 ...defaultSettings.dotStyle,
                 ...props.dotStyle,
+                display: !!props.vertical?'block':'inline-block',                
             },
             curDotStyle:{
                 ...defaultSettings.curDotStyle,
@@ -111,15 +113,16 @@ export default class Slider extends Component {
         let _children = Children.toArray(children);
         let total = Children.count(this.props.children) || 1;
         let slidersStyle = {
-            width: `${total/this.state.sliderToShow * 100}%`,
-            height: '100%',
-            left: `-${this.state.sliderIndex * 100 /this.state.sliderToShow}%`,
-            top: '0px',
-            transitionProperty: 'left',
+            width: this.state.vertical?'100%':`${total/this.state.sliderToShow * 100}%`,
+            height: !this.state.vertical?'100%':`${total/this.state.sliderToShow * 100}%`,
+            left: this.state.vertical?'0px':`-${this.state.sliderIndex * 100 /this.state.sliderToShow}%`,
+            top: !this.state.vertical?'0px':`-${this.state.sliderIndex * 100 /this.state.sliderToShow}%`,
+            transitionProperty: this.state.vertical?'top':'left',
             transitionDuration: `${this.state.speed || 0}ms`,
             transitionTimingFunction: this.state.easing
         };
         let DotsProp = {
+            vertical: this.state.vertical,
             dots: this.state.dots,
             dotX: this.state.dotX,
             dotY: this.state.dotY,
@@ -129,7 +132,6 @@ export default class Slider extends Component {
             curDotStyle: this.state.curDotStyle,
             dotsOnClick: this.dotsOnClick,
             sliderToShow:this.props.sliderToShow,
-
         };
         let ArrowsProp = {
             arrowsOnClick: this.arrowsOnClick,
@@ -141,7 +143,10 @@ export default class Slider extends Component {
             <div className={styles.sliderBox} style={{}} onMouseOut={this.onMouseOut} onMouseOver={this.onMouseOver}>
                 <ul className={styles.sliders} style={slidersStyle}>
                     {
-                        _children.map((child, key) => <li style={{ width: `${100 / (total)}%`, height: '100%', }} key={key}>{child}</li>)
+                        _children.map((child, key) => <li style={{ 
+                            width: this.state.vertical?'100%':`${100 / (total)}%`, 
+                            height: !this.state.vertical?'100%':`${100 / (total)}%`,
+                        }} key={key}>{child}</li>)
                     }
                 </ul>
                 {

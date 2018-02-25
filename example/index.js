@@ -88,6 +88,15 @@ const sliderList = [
                 return <span style={{ fontSize: '14px' }}>{type}</span>
             }
         }
+    }, {
+        title: "竖直滑动",
+        info: '利用 vertical  竖直滑动',
+        prop: {
+            isDots: true,
+            vertical: true,
+            dotX: -40,
+            dotY: 'bottom'
+        }
     },
 ].map((item) => ({
     ...item,

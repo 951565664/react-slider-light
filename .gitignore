@@ -57,3 +57,5 @@ freeline_project_description.json
 node_modules
 
 dist
+
+lib

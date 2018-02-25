@@ -5,15 +5,20 @@ a lightweight Slider component built with [react](https://github.com/facebook/re
 
 ---
 
+
+
 ## Table of Contents
 
-* [Features特性](#features)
 * [Demos演示](#demos)
+* [Features特性](#features)
 * [Getting Started快速开始](#getting-started)
   *  [Install](#install)
   *  [Use](#use)
   *  [Development](#development)
   *  [Props](#props)
+## Demos
+
+[Demos and codes 演示和代码](https://951565664.github.io/react-slider-light/)
 
 ## Features
 
@@ -21,9 +26,6 @@ a lightweight Slider component built with [react](https://github.com/facebook/re
 * **Support custom 支持自定义**: Can change style,such as dots and arrows 能够改变样式位置，例如 分页符和箭头
 * **Support vertical 支持竖直**
 
-## Demos
-
-[Demos and codes 演示和代码](https://951565664.github.io/react-slider-light/)
 
 ## Getting Started
 
@@ -92,11 +94,12 @@ Please replicate your issue with [CodeSandbox template](https://codesandbox.io/s
 #### 1.0.1
  `2018-2-15`
  
-#### 2.0.1
+#### 2.0.3
  `2018-2-25`
--	增加垂直滚动
--	修改不支持ie9的bug
-
+-	测试垂直
+#### 3.0.1
+ `2018-2-25`
+-	修改bug
 ## FAQ
 
 #### Will be updated regularly? 是否会经常更新

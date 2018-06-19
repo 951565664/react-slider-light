@@ -3,7 +3,6 @@ import styles from './index.less'
 import Dots from './dots'
 import Arrows from './arrows'
 
-
 export default class Slider extends Component {
     constructor(props) {
         super(props)
@@ -23,10 +22,10 @@ export default class Slider extends Component {
                 display: 'inline-block',
                 margin: '8px',
                 cursor: 'pointer',
-                overflow:'hidden'
+                overflow: 'hidden'
             },
             curDotStyle: {
-                
+
             },
             dotX: 'center',//'right' 'left' 'center' 20 30 -20 30
             dotY: -25,//top center
@@ -34,21 +33,22 @@ export default class Slider extends Component {
             isArrows: false,
             arrowRender: undefined,//()=>
             arrowsY: 'middle',
-            vertical:false,
+            vertical: false,
         };
 
         this.state = {
             ...defaultSettings,
             ...props,
-            dotStyle:{
+            dotStyle: {
                 ...defaultSettings.dotStyle,
                 ...props.dotStyle,
-                display: !!props.vertical?'block':'inline-block',                
+                display: !!props.vertical ? 'block' : 'inline-block',
             },
-            curDotStyle:{
+            curDotStyle: {
                 ...defaultSettings.curDotStyle,
                 ...props.curDotStyle,
-            }
+            },
+            isTransitionProperty: true,
         };
         this.timer = null; //定时器
     }
@@ -64,6 +64,11 @@ export default class Slider extends Component {
     componentWillReceiveProps(nextProps) {
         if (this.props.autoPaly !== undefined && this.props.autoPaly === false) {
             this.endSlider()
+        }
+        if (nextProps.sliderToShow !== undefined && nextProps.sliderToShow !== this.state.sliderToShow) {
+            this.setState({
+                sliderToShow: nextProps.sliderToShow
+            })
         }
     }
 
@@ -111,16 +116,6 @@ export default class Slider extends Component {
     render() {
         let { children } = this.props;
         let _children = Children.toArray(children);
-        let total = Children.count(this.props.children) || 1;
-        let slidersStyle = {
-            width: this.state.vertical?'100%':`${total/this.state.sliderToShow * 100}%`,
-            height: !this.state.vertical?'100%':`${total/this.state.sliderToShow * 100}%`,
-            left: this.state.vertical?'0px':`-${this.state.sliderIndex * 100 /this.state.sliderToShow}%`,
-            top: !this.state.vertical?'0px':`-${this.state.sliderIndex * 100 /this.state.sliderToShow}%`,
-            transitionProperty: this.state.vertical?'top':'left',
-            transitionDuration: `${this.state.speed || 0}ms`,
-            transitionTimingFunction: this.state.easing
-        };
         let DotsProp = {
             vertical: this.state.vertical,
             dots: this.state.dots,
@@ -131,21 +126,39 @@ export default class Slider extends Component {
             dotStyle: this.state.dotStyle,
             curDotStyle: this.state.curDotStyle,
             dotsOnClick: this.dotsOnClick,
-            sliderToShow:this.props.sliderToShow,
+            sliderToShow: this.props.sliderToShow,
         };
         let ArrowsProp = {
             arrowsOnClick: this.arrowsOnClick,
             arrowsY: this.state.arrowsY,
             arrowRender: this.state.arrowRender,
         };
+        /* 如果不是一页一页滚动的  每页展示几个，就多赋值几个数组*/
+        if (this.state.sliderToShow !== 1 || this.state.sliderToScroll !== 1) {
+            _children = _children.concat(_children.slice(0, this.state.sliderToShow - 1))
+        }
+        // let total = Children.count(children) || 1;
+        let total = _children.length;
+        /* 是不是最后一个 */
+        let _isTransitionProperty = !(this.state.sliderIndex % total === 0);
+        let slidersStyle = {
+            width: this.state.vertical ? '100%' : `${total / this.state.sliderToShow * 100}%`,
+            height: !this.state.vertical ? '100%' : `${total / this.state.sliderToShow * 100}%`,
+            left: this.state.vertical ? '0px' : `-${this.state.sliderIndex * 100 / this.state.sliderToShow}%`,
+            top: !this.state.vertical ? '0px' : `-${this.state.sliderIndex * 100 / this.state.sliderToShow}%`,
+            transitionProperty: _isTransitionProperty ? (this.state.vertical ? 'top' : 'left') : 'none',
+            transitionDuration: `${this.state.speed || 0}ms`,
+            transitionTimingFunction: this.state.easing
+        };
+
 
         return (
             <div className={styles.sliderBox} style={{}} onMouseOut={this.onMouseOut} onMouseOver={this.onMouseOver}>
                 <ul className={styles.sliders} style={slidersStyle}>
                     {
-                        _children.map((child, key) => <li style={{ 
-                            width: this.state.vertical?'100%':`${100 / (total)}%`, 
-                            height: !this.state.vertical?'100%':`${100 / (total)}%`,
+                        _children.map((child, key) => <li style={{
+                            width: this.state.vertical ? '100%' : `${100 / (total)}%`,
+                            height: !this.state.vertical ? '100%' : `${100 / (total)}%`,
                         }} key={key}>{child}</li>)
                     }
                 </ul>

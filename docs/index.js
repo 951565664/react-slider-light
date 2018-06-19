@@ -71,7 +71,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f4d48cd9137b2c19b13e"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "12ea05a2a3ba99c08238"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -981,15 +981,15 @@ var propToStringForCode = function propToStringForCode(obj) {
     );
 };
 var sliderList = [{
-    title: "基本",
-    info: '基本用法',
-    prop: {}
-}, {
+    // title: "基本",
+    // info: '基本用法',
+    // prop: {}
+    // }, {
     title: "设置间隔和动画时长",
     info: '可以通过delay和speed设置间隔和动画时长',
     prop: {
-        delay: 3000,
-        speed: 3000 //ms
+        delay: 1000,
+        speed: 1000 //ms
     }
 }, {
     title: "分页符位置样式",
@@ -1198,11 +1198,11 @@ module.exports = {"wrapper":"wrapper-1MpWX","exampleBox":"exampleBox-1GtS2","are
 
 var _assign = __webpack_require__("./node_modules/_object-assign@4.1.1@object-assign/index.js");
 
-var emptyObject = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/emptyObject.js");
-var _invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var emptyObject = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/emptyObject.js");
+var _invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 if (process.env.NODE_ENV !== 'production') {
-  var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+  var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 }
 
 var MIXINS_KEY = 'mixins';
@@ -2117,7 +2117,7 @@ module.exports = factory;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/EventListener.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/EventListener.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2132,7 +2132,7 @@ module.exports = factory;
  * @typechecks
  */
 
-var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/emptyFunction.js");
+var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/emptyFunction.js");
 
 /**
  * Upstream version of event listener. Does not take into account specific
@@ -2199,7 +2199,7 @@ module.exports = EventListener;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2239,7 +2239,7 @@ module.exports = ExecutionEnvironment;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/camelize.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/camelize.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2275,7 +2275,7 @@ module.exports = camelize;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/camelizeStyleName.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/camelizeStyleName.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2290,7 +2290,7 @@ module.exports = camelize;
 
 
 
-var camelize = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/camelize.js");
+var camelize = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/camelize.js");
 
 var msPattern = /^-ms-/;
 
@@ -2319,7 +2319,7 @@ module.exports = camelizeStyleName;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/containsNode.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/containsNode.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2334,7 +2334,7 @@ module.exports = camelizeStyleName;
  * 
  */
 
-var isTextNode = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/isTextNode.js");
+var isTextNode = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/isTextNode.js");
 
 /*eslint-disable no-bitwise */
 
@@ -2363,7 +2363,7 @@ module.exports = containsNode;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/createArrayFromMixed.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/createArrayFromMixed.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2378,7 +2378,7 @@ module.exports = containsNode;
  * @typechecks
  */
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 /**
  * Convert array-like objects to arrays.
@@ -2495,7 +2495,7 @@ module.exports = createArrayFromMixed;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/createNodesFromMarkup.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/createNodesFromMarkup.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2512,11 +2512,11 @@ module.exports = createArrayFromMixed;
 
 /*eslint-disable fb-www/unsafe-html*/
 
-var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
 
-var createArrayFromMixed = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/createArrayFromMixed.js");
-var getMarkupWrap = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/getMarkupWrap.js");
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var createArrayFromMixed = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/createArrayFromMixed.js");
+var getMarkupWrap = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/getMarkupWrap.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 /**
  * Dummy container used to render all markup.
@@ -2584,7 +2584,7 @@ module.exports = createNodesFromMarkup;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/emptyFunction.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/emptyFunction.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2627,7 +2627,7 @@ module.exports = emptyFunction;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/emptyObject.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/emptyObject.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2652,7 +2652,7 @@ module.exports = emptyObject;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/focusNode.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/focusNode.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2683,7 +2683,7 @@ module.exports = focusNode;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/getActiveElement.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/getActiveElement.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2726,7 +2726,7 @@ module.exports = getActiveElement;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/getMarkupWrap.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/getMarkupWrap.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2742,9 +2742,9 @@ module.exports = getActiveElement;
 
 /*eslint-disable fb-www/unsafe-html */
 
-var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 /**
  * Dummy container used to detect which wraps are necessary.
@@ -2826,7 +2826,7 @@ module.exports = getMarkupWrap;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/getUnboundedScrollPosition.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/getUnboundedScrollPosition.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2869,7 +2869,7 @@ module.exports = getUnboundedScrollPosition;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/hyphenate.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/hyphenate.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2906,7 +2906,7 @@ module.exports = hyphenate;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/hyphenateStyleName.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/hyphenateStyleName.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2921,7 +2921,7 @@ module.exports = hyphenate;
 
 
 
-var hyphenate = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/hyphenate.js");
+var hyphenate = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/hyphenate.js");
 
 var msPattern = /^ms-/;
 
@@ -2949,7 +2949,7 @@ module.exports = hyphenateStyleName;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3010,7 +3010,7 @@ module.exports = invariant;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/isNode.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/isNode.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3039,7 +3039,7 @@ module.exports = isNode;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/isTextNode.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/isTextNode.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3054,7 +3054,7 @@ module.exports = isNode;
  * @typechecks
  */
 
-var isNode = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/isNode.js");
+var isNode = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/isNode.js");
 
 /**
  * @param {*} object The object to check.
@@ -3068,7 +3068,7 @@ module.exports = isTextNode;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/memoizeStringOnly.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/memoizeStringOnly.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3102,7 +3102,7 @@ module.exports = memoizeStringOnly;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/performance.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/performance.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3117,7 +3117,7 @@ module.exports = memoizeStringOnly;
 
 
 
-var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
 
 var performance;
 
@@ -3129,7 +3129,7 @@ module.exports = performance || {};
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/performanceNow.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/performanceNow.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3144,7 +3144,7 @@ module.exports = performance || {};
  * @typechecks
  */
 
-var performance = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/performance.js");
+var performance = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/performance.js");
 
 var performanceNow;
 
@@ -3167,7 +3167,7 @@ module.exports = performanceNow;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/shallowEqual.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/shallowEqual.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3239,7 +3239,7 @@ module.exports = shallowEqual;
 
 /***/ }),
 
-/***/ "./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js":
+/***/ "./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3253,7 +3253,7 @@ module.exports = shallowEqual;
 
 
 
-var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/emptyFunction.js");
+var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/emptyFunction.js");
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -3598,7 +3598,7 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-/***/ "./node_modules/_prop-types@15.6.0@prop-types/checkPropTypes.js":
+/***/ "./node_modules/_prop-types@15.6.1@prop-types/checkPropTypes.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3612,9 +3612,9 @@ process.umask = function() { return 0; };
 
 
 if (process.env.NODE_ENV !== 'production') {
-  var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
-  var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
-  var ReactPropTypesSecret = __webpack_require__("./node_modules/_prop-types@15.6.0@prop-types/lib/ReactPropTypesSecret.js");
+  var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
+  var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
+  var ReactPropTypesSecret = __webpack_require__("./node_modules/_prop-types@15.6.1@prop-types/lib/ReactPropTypesSecret.js");
   var loggedTypeFailures = {};
 }
 
@@ -3666,7 +3666,7 @@ module.exports = checkPropTypes;
 
 /***/ }),
 
-/***/ "./node_modules/_prop-types@15.6.0@prop-types/factory.js":
+/***/ "./node_modules/_prop-types@15.6.1@prop-types/factory.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3683,7 +3683,7 @@ module.exports = checkPropTypes;
 // Therefore we re-export development-only version with all the PropTypes checks here.
 // However if one is migrating to the `prop-types` npm library, they will go through the
 // `index.js` entry point, and it will branch depending on the environment.
-var factory = __webpack_require__("./node_modules/_prop-types@15.6.0@prop-types/factoryWithTypeCheckers.js");
+var factory = __webpack_require__("./node_modules/_prop-types@15.6.1@prop-types/factoryWithTypeCheckers.js");
 module.exports = function(isValidElement) {
   // It is still allowed in 15.5.
   var throwOnDirectAccess = false;
@@ -3693,7 +3693,7 @@ module.exports = function(isValidElement) {
 
 /***/ }),
 
-/***/ "./node_modules/_prop-types@15.6.0@prop-types/factoryWithTypeCheckers.js":
+/***/ "./node_modules/_prop-types@15.6.1@prop-types/factoryWithTypeCheckers.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3706,13 +3706,13 @@ module.exports = function(isValidElement) {
 
 
 
-var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/emptyFunction.js");
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/emptyFunction.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 var assign = __webpack_require__("./node_modules/_object-assign@4.1.1@object-assign/index.js");
 
-var ReactPropTypesSecret = __webpack_require__("./node_modules/_prop-types@15.6.0@prop-types/lib/ReactPropTypesSecret.js");
-var checkPropTypes = __webpack_require__("./node_modules/_prop-types@15.6.0@prop-types/checkPropTypes.js");
+var ReactPropTypesSecret = __webpack_require__("./node_modules/_prop-types@15.6.1@prop-types/lib/ReactPropTypesSecret.js");
+var checkPropTypes = __webpack_require__("./node_modules/_prop-types@15.6.1@prop-types/checkPropTypes.js");
 
 module.exports = function(isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -4244,7 +4244,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 /***/ }),
 
-/***/ "./node_modules/_prop-types@15.6.0@prop-types/lib/ReactPropTypesSecret.js":
+/***/ "./node_modules/_prop-types@15.6.1@prop-types/lib/ReactPropTypesSecret.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4369,7 +4369,7 @@ module.exports = ARIADOMPropertyConfig;
 
 var ReactDOMComponentTree = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactDOMComponentTree.js");
 
-var focusNode = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/focusNode.js");
+var focusNode = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/focusNode.js");
 
 var AutoFocusUtils = {
   focusDOMComponent: function () {
@@ -4396,7 +4396,7 @@ module.exports = AutoFocusUtils;
 
 
 var EventPropagators = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/EventPropagators.js");
-var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
 var FallbackCompositionState = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/FallbackCompositionState.js");
 var SyntheticCompositionEvent = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/SyntheticCompositionEvent.js");
 var SyntheticInputEvent = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/SyntheticInputEvent.js");
@@ -4943,14 +4943,14 @@ module.exports = CSSProperty;
 
 
 var CSSProperty = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/CSSProperty.js");
-var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
 var ReactInstrumentation = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactInstrumentation.js");
 
-var camelizeStyleName = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/camelizeStyleName.js");
+var camelizeStyleName = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/camelizeStyleName.js");
 var dangerousStyleValue = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/dangerousStyleValue.js");
-var hyphenateStyleName = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/hyphenateStyleName.js");
-var memoizeStringOnly = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/memoizeStringOnly.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var hyphenateStyleName = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/hyphenateStyleName.js");
+var memoizeStringOnly = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/memoizeStringOnly.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var processStyleName = memoizeStringOnly(function (styleName) {
   return hyphenateStyleName(styleName);
@@ -5169,7 +5169,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var PooledClass = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/PooledClass.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 /**
  * A specialized pseudo-event module to help keep track of components waiting to
@@ -5288,7 +5288,7 @@ module.exports = PooledClass.addPoolingTo(CallbackQueue);
 
 var EventPluginHub = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/EventPluginHub.js");
 var EventPropagators = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/EventPropagators.js");
-var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
 var ReactDOMComponentTree = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactDOMComponentTree.js");
 var ReactUpdates = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactUpdates.js");
 var SyntheticEvent = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/SyntheticEvent.js");
@@ -5981,7 +5981,7 @@ module.exports = DOMNamespaces;
 
 var _prodInvariant = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/reactProdInvariant.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 function checkMask(value, bitmask) {
   return (value & bitmask) === bitmask;
@@ -6198,7 +6198,7 @@ var ReactDOMComponentTree = __webpack_require__("./node_modules/_react-dom@15.6.
 var ReactInstrumentation = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactInstrumentation.js");
 
 var quoteAttributeValueForBrowser = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/quoteAttributeValueForBrowser.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var VALID_ATTRIBUTE_NAME_REGEX = new RegExp('^[' + DOMProperty.ATTRIBUTE_NAME_START_CHAR + '][' + DOMProperty.ATTRIBUTE_NAME_CHAR + ']*$');
 var illegalAttributeNameCache = {};
@@ -6436,11 +6436,11 @@ module.exports = DOMPropertyOperations;
 var _prodInvariant = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/reactProdInvariant.js");
 
 var DOMLazyTree = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/DOMLazyTree.js");
-var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
 
-var createNodesFromMarkup = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/createNodesFromMarkup.js");
-var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/emptyFunction.js");
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var createNodesFromMarkup = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/createNodesFromMarkup.js");
+var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/emptyFunction.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 var Danger = {
   /**
@@ -6624,7 +6624,7 @@ var ReactErrorUtils = __webpack_require__("./node_modules/_react-dom@15.6.2@reac
 
 var accumulateInto = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/accumulateInto.js");
 var forEachAccumulated = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/forEachAccumulated.js");
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 /**
  * Internal store for event listeners
@@ -6898,7 +6898,7 @@ module.exports = EventPluginHub;
 
 var _prodInvariant = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/reactProdInvariant.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 /**
  * Injectable ordering of event plugins.
@@ -7157,8 +7157,8 @@ var _prodInvariant = __webpack_require__("./node_modules/_react-dom@15.6.2@react
 
 var ReactErrorUtils = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactErrorUtils.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 /**
  * Injected dependencies:
@@ -7389,7 +7389,7 @@ var EventPluginUtils = __webpack_require__("./node_modules/_react-dom@15.6.2@rea
 
 var accumulateInto = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/accumulateInto.js");
 var forEachAccumulated = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/forEachAccumulated.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var getListener = EventPluginHub.getListener;
 
@@ -7929,13 +7929,13 @@ module.exports = KeyEscapeUtils;
 var _prodInvariant = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/reactProdInvariant.js");
 
 var ReactPropTypesSecret = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactPropTypesSecret.js");
-var propTypesFactory = __webpack_require__("./node_modules/_prop-types@15.6.0@prop-types/factory.js");
+var propTypesFactory = __webpack_require__("./node_modules/_prop-types@15.6.1@prop-types/factory.js");
 
 var React = __webpack_require__("./node_modules/_react@15.6.2@react/lib/React.js");
 var PropTypes = propTypesFactory(React.isValidElement);
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var hasReadOnlyValue = {
   button: true,
@@ -8072,7 +8072,7 @@ module.exports = LinkedValueUtils;
 
 var _prodInvariant = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/reactProdInvariant.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 /**
  * Static poolers. Several custom versions for each potential number of
@@ -8520,7 +8520,7 @@ var instantiateReactComponent = __webpack_require__("./node_modules/_react-dom@1
 var KeyEscapeUtils = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/KeyEscapeUtils.js");
 var shouldUpdateReactComponent = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/shouldUpdateReactComponent.js");
 var traverseAllChildren = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/traverseAllChildren.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var ReactComponentTreeHook;
 
@@ -8707,7 +8707,7 @@ module.exports = ReactComponentBrowserEnvironment;
 
 var _prodInvariant = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/reactProdInvariant.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 var injected = false;
 
@@ -8769,11 +8769,11 @@ if (process.env.NODE_ENV !== 'production') {
   var checkReactTypeSpec = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/checkReactTypeSpec.js");
 }
 
-var emptyObject = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/emptyObject.js");
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
-var shallowEqual = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/shallowEqual.js");
+var emptyObject = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/emptyObject.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
+var shallowEqual = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/shallowEqual.js");
 var shouldUpdateReactComponent = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/shouldUpdateReactComponent.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var CompositeTypes = {
   ImpureClass: 0,
@@ -9670,7 +9670,7 @@ var ReactVersion = __webpack_require__("./node_modules/_react-dom@15.6.2@react-d
 var findDOMNode = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/findDOMNode.js");
 var getHostComponentFromComposite = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/getHostComponentFromComposite.js");
 var renderSubtreeIntoContainer = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/renderSubtreeIntoContainer.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 ReactDefaultInjection.inject();
 
@@ -9710,7 +9710,7 @@ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' && typeof __REACT_DEVT
 }
 
 if (process.env.NODE_ENV !== 'production') {
-  var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+  var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
   if (ExecutionEnvironment.canUseDOM && window.top === window.self) {
     // First check if devtools is not installed
     if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
@@ -9798,14 +9798,14 @@ var ReactInstrumentation = __webpack_require__("./node_modules/_react-dom@15.6.2
 var ReactMultiChild = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactMultiChild.js");
 var ReactServerRenderingTransaction = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactServerRenderingTransaction.js");
 
-var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/emptyFunction.js");
+var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/emptyFunction.js");
 var escapeTextContentForBrowser = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/escapeTextContentForBrowser.js");
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 var isEventSupported = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/isEventSupported.js");
-var shallowEqual = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/shallowEqual.js");
+var shallowEqual = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/shallowEqual.js");
 var inputValueTracking = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/inputValueTracking.js");
 var validateDOMNesting = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/validateDOMNesting.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var Flags = ReactDOMComponentFlags;
 var deleteListener = EventPluginHub.deleteListener;
@@ -10820,7 +10820,7 @@ var _prodInvariant = __webpack_require__("./node_modules/_react-dom@15.6.2@react
 var DOMProperty = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/DOMProperty.js");
 var ReactDOMComponentFlags = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactDOMComponentFlags.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 var ATTR_NAME = DOMProperty.ID_ATTRIBUTE_NAME;
 var Flags = ReactDOMComponentFlags;
@@ -11185,8 +11185,8 @@ var LinkedValueUtils = __webpack_require__("./node_modules/_react-dom@15.6.2@rea
 var ReactDOMComponentTree = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactDOMComponentTree.js");
 var ReactUpdates = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactUpdates.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var didWarnValueLink = false;
 var didWarnCheckedLink = false;
@@ -11472,7 +11472,7 @@ module.exports = ReactDOMInput;
 var DOMProperty = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/DOMProperty.js");
 var ReactComponentTreeHook = __webpack_require__("./node_modules/_react@15.6.2@react/lib/ReactComponentTreeHook.js");
 
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var warnedProperties = {};
 var rARIA = new RegExp('^(aria)-[' + DOMProperty.ATTRIBUTE_NAME_CHAR + ']*$');
@@ -11569,7 +11569,7 @@ module.exports = ReactDOMInvalidARIAHook;
 
 var ReactComponentTreeHook = __webpack_require__("./node_modules/_react@15.6.2@react/lib/ReactComponentTreeHook.js");
 
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var didWarnValueNull = false;
 
@@ -11621,7 +11621,7 @@ var React = __webpack_require__("./node_modules/_react@15.6.2@react/lib/React.js
 var ReactDOMComponentTree = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactDOMComponentTree.js");
 var ReactDOMSelect = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactDOMSelect.js");
 
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 var didWarnInvalidOptionChildren = false;
 
 function flattenChildren(children) {
@@ -11748,7 +11748,7 @@ var LinkedValueUtils = __webpack_require__("./node_modules/_react-dom@15.6.2@rea
 var ReactDOMComponentTree = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactDOMComponentTree.js");
 var ReactUpdates = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactUpdates.js");
 
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var didWarnValueLink = false;
 var didWarnValueDefaultValue = false;
@@ -11947,7 +11947,7 @@ module.exports = ReactDOMSelect;
 
 
 
-var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
 
 var getNodeForCharacterOffset = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/getNodeForCharacterOffset.js");
 var getTextContentAccessor = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/getTextContentAccessor.js");
@@ -12171,7 +12171,7 @@ var DOMLazyTree = __webpack_require__("./node_modules/_react-dom@15.6.2@react-do
 var ReactDOMComponentTree = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactDOMComponentTree.js");
 
 var escapeTextContentForBrowser = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/escapeTextContentForBrowser.js");
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 var validateDOMNesting = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/validateDOMNesting.js");
 
 /**
@@ -12337,8 +12337,8 @@ var LinkedValueUtils = __webpack_require__("./node_modules/_react-dom@15.6.2@rea
 var ReactDOMComponentTree = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactDOMComponentTree.js");
 var ReactUpdates = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactUpdates.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var didWarnValueLink = false;
 var didWarnValDefaultVal = false;
@@ -12497,7 +12497,7 @@ module.exports = ReactDOMTextarea;
 
 var _prodInvariant = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/reactProdInvariant.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 /**
  * Return the lowest common ancestor of A and B, or null if they are in
@@ -12640,7 +12640,7 @@ var DOMProperty = __webpack_require__("./node_modules/_react-dom@15.6.2@react-do
 var EventPluginRegistry = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/EventPluginRegistry.js");
 var ReactComponentTreeHook = __webpack_require__("./node_modules/_react@15.6.2@react/lib/ReactComponentTreeHook.js");
 
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 if (process.env.NODE_ENV !== 'production') {
   var reactProps = {
@@ -12757,10 +12757,10 @@ module.exports = ReactDOMUnknownPropertyHook;
 var ReactInvalidSetStateWarningHook = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactInvalidSetStateWarningHook.js");
 var ReactHostOperationHistoryHook = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactHostOperationHistoryHook.js");
 var ReactComponentTreeHook = __webpack_require__("./node_modules/_react@15.6.2@react/lib/ReactComponentTreeHook.js");
-var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
 
-var performanceNow = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/performanceNow.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var performanceNow = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/performanceNow.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var hooks = [];
 var didHookThrowForEvent = {};
@@ -13124,7 +13124,7 @@ var _assign = __webpack_require__("./node_modules/_object-assign@4.1.1@object-as
 var ReactUpdates = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactUpdates.js");
 var Transaction = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/Transaction.js");
 
-var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/emptyFunction.js");
+var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/emptyFunction.js");
 
 var RESET_BATCHED_UPDATES = {
   initialize: emptyFunction,
@@ -13460,14 +13460,14 @@ module.exports = ReactEventEmitterMixin;
 
 var _assign = __webpack_require__("./node_modules/_object-assign@4.1.1@object-assign/index.js");
 
-var EventListener = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/EventListener.js");
-var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+var EventListener = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/EventListener.js");
+var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
 var PooledClass = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/PooledClass.js");
 var ReactDOMComponentTree = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactDOMComponentTree.js");
 var ReactUpdates = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactUpdates.js");
 
 var getEventTarget = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/getEventTarget.js");
-var getUnboundedScrollPosition = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/getUnboundedScrollPosition.js");
+var getUnboundedScrollPosition = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/getUnboundedScrollPosition.js");
 
 /**
  * Find the deepest React component completely containing the root of the
@@ -13645,7 +13645,7 @@ module.exports = ReactFeatureFlags;
 
 var _prodInvariant = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/reactProdInvariant.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 var genericComponentClass = null;
 var textComponentClass = null;
@@ -13794,9 +13794,9 @@ module.exports = ReactInjection;
 
 var ReactDOMSelection = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactDOMSelection.js");
 
-var containsNode = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/containsNode.js");
-var focusNode = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/focusNode.js");
-var getActiveElement = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/getActiveElement.js");
+var containsNode = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/containsNode.js");
+var focusNode = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/focusNode.js");
+var getActiveElement = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/getActiveElement.js");
 
 function isInDocument(node) {
   return containsNode(document.documentElement, node);
@@ -13999,7 +13999,7 @@ module.exports = { debugTool: debugTool };
 
 
 
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 if (process.env.NODE_ENV !== 'production') {
   var processingChildContext = false;
@@ -14112,12 +14112,12 @@ var ReactReconciler = __webpack_require__("./node_modules/_react-dom@15.6.2@reac
 var ReactUpdateQueue = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactUpdateQueue.js");
 var ReactUpdates = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactUpdates.js");
 
-var emptyObject = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/emptyObject.js");
+var emptyObject = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/emptyObject.js");
 var instantiateReactComponent = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/instantiateReactComponent.js");
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 var setInnerHTML = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/setInnerHTML.js");
 var shouldUpdateReactComponent = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/shouldUpdateReactComponent.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var ATTR_NAME = DOMProperty.ID_ATTRIBUTE_NAME;
 var ROOT_ATTR_NAME = DOMProperty.ROOT_ATTRIBUTE_NAME;
@@ -14647,9 +14647,9 @@ var ReactCurrentOwner = __webpack_require__("./node_modules/_react@15.6.2@react/
 var ReactReconciler = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactReconciler.js");
 var ReactChildReconciler = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactChildReconciler.js");
 
-var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/emptyFunction.js");
+var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/emptyFunction.js");
 var flattenChildren = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/flattenChildren.js");
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 /**
  * Make an update for markup to be rendered and inserted at a supplied index.
@@ -15093,7 +15093,7 @@ var _prodInvariant = __webpack_require__("./node_modules/_react-dom@15.6.2@react
 
 var React = __webpack_require__("./node_modules/_react@15.6.2@react/lib/React.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 var ReactNodeTypes = {
   HOST: 0,
@@ -15136,7 +15136,7 @@ module.exports = ReactNodeTypes;
 
 var _prodInvariant = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/reactProdInvariant.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 /**
  * @param {?object} object
@@ -15468,7 +15468,7 @@ module.exports = ReactReconcileTransaction;
 var ReactRef = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactRef.js");
 var ReactInstrumentation = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactInstrumentation.js");
 
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 /**
  * Helper to call ReactRef.attachRefs with this composite component, split out
@@ -15829,7 +15829,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var ReactUpdateQueue = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactUpdateQueue.js");
 
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 function warnNoop(publicInstance, callerName) {
   if (process.env.NODE_ENV !== 'production') {
@@ -15975,8 +15975,8 @@ var ReactInstanceMap = __webpack_require__("./node_modules/_react-dom@15.6.2@rea
 var ReactInstrumentation = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactInstrumentation.js");
 var ReactUpdates = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactUpdates.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 function enqueueUpdate(internalInstance) {
   ReactUpdates.enqueueUpdate(internalInstance);
@@ -16216,7 +16216,7 @@ var ReactFeatureFlags = __webpack_require__("./node_modules/_react-dom@15.6.2@re
 var ReactReconciler = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactReconciler.js");
 var Transaction = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/Transaction.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 var dirtyComponents = [];
 var updateBatchNumber = 0;
@@ -16788,14 +16788,14 @@ module.exports = SVGDOMPropertyConfig;
 
 
 var EventPropagators = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/EventPropagators.js");
-var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
 var ReactDOMComponentTree = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactDOMComponentTree.js");
 var ReactInputSelection = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactInputSelection.js");
 var SyntheticEvent = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/SyntheticEvent.js");
 
-var getActiveElement = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/getActiveElement.js");
+var getActiveElement = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/getActiveElement.js");
 var isTextInputElement = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/isTextInputElement.js");
-var shallowEqual = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/shallowEqual.js");
+var shallowEqual = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/shallowEqual.js");
 
 var skipSelectionChangeEvent = ExecutionEnvironment.canUseDOM && 'documentMode' in document && document.documentMode <= 11;
 
@@ -16982,7 +16982,7 @@ module.exports = SelectEventPlugin;
 
 var _prodInvariant = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/reactProdInvariant.js");
 
-var EventListener = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/EventListener.js");
+var EventListener = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/EventListener.js");
 var EventPropagators = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/EventPropagators.js");
 var ReactDOMComponentTree = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactDOMComponentTree.js");
 var SyntheticAnimationEvent = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/SyntheticAnimationEvent.js");
@@ -16997,9 +16997,9 @@ var SyntheticTransitionEvent = __webpack_require__("./node_modules/_react-dom@15
 var SyntheticUIEvent = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/SyntheticUIEvent.js");
 var SyntheticWheelEvent = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/SyntheticWheelEvent.js");
 
-var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/emptyFunction.js");
+var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/emptyFunction.js");
 var getEventCharCode = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/getEventCharCode.js");
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 /**
  * Turns
@@ -17379,8 +17379,8 @@ var _assign = __webpack_require__("./node_modules/_object-assign@4.1.1@object-as
 
 var PooledClass = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/PooledClass.js");
 
-var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/emptyFunction.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/emptyFunction.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var didWarnForAddedNewProperty = false;
 var isProxySupported = typeof Proxy === 'function';
@@ -18109,7 +18109,7 @@ module.exports = SyntheticWheelEvent;
 
 var _prodInvariant = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/reactProdInvariant.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 var OBSERVED_ERROR = {};
 
@@ -18371,7 +18371,7 @@ module.exports = ViewportMetrics;
 
 var _prodInvariant = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/reactProdInvariant.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 /**
  * Accumulates items that must not be null or undefined into the first one. This
@@ -18484,8 +18484,8 @@ var _prodInvariant = __webpack_require__("./node_modules/_react-dom@15.6.2@react
 var ReactPropTypeLocationNames = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactPropTypeLocationNames.js");
 var ReactPropTypesSecret = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactPropTypesSecret.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var ReactComponentTreeHook;
 
@@ -18608,7 +18608,7 @@ module.exports = createMicrosoftUnsafeLocalFunction;
 
 
 var CSSProperty = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/CSSProperty.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var isUnitlessNumber = CSSProperty.isUnitlessNumber;
 var styleWarnings = {};
@@ -18824,8 +18824,8 @@ var ReactDOMComponentTree = __webpack_require__("./node_modules/_react-dom@15.6.
 var ReactInstanceMap = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactInstanceMap.js");
 
 var getHostComponentFromComposite = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/getHostComponentFromComposite.js");
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 /**
  * Returns the DOM node rendered by this element.
@@ -18885,7 +18885,7 @@ module.exports = findDOMNode;
 
 var KeyEscapeUtils = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/KeyEscapeUtils.js");
 var traverseAllChildren = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/traverseAllChildren.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var ReactComponentTreeHook;
 
@@ -19411,7 +19411,7 @@ module.exports = getNodeForCharacterOffset;
 
 
 
-var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
 
 var contentKey = null;
 
@@ -19448,7 +19448,7 @@ module.exports = getTextContentAccessor;
 
 
 
-var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
 
 /**
  * Generate a mapping of standard vendor prefixes using the defined style property and event name.
@@ -19688,8 +19688,8 @@ var ReactEmptyComponent = __webpack_require__("./node_modules/_react-dom@15.6.2@
 var ReactHostComponent = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactHostComponent.js");
 
 var getNextDebugID = __webpack_require__("./node_modules/_react@15.6.2@react/lib/getNextDebugID.js");
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 // To avoid a cyclic dependency, we create the final class in this module
 var ReactCompositeComponentWrapper = function (element) {
@@ -19814,7 +19814,7 @@ module.exports = instantiateReactComponent;
 
 
 
-var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
 
 var useHasFeature;
 if (ExecutionEnvironment.canUseDOM) {
@@ -20026,7 +20026,7 @@ module.exports = ReactMount.renderSubtreeIntoContainer;
 
 
 
-var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
 var DOMNamespaces = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/DOMNamespaces.js");
 
 var WHITESPACE_TEST = /^[ \r\n\t\f]/;
@@ -20128,7 +20128,7 @@ module.exports = setInnerHTML;
 
 
 
-var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js");
+var ExecutionEnvironment = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/ExecutionEnvironment.js");
 var escapeTextContentForBrowser = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/escapeTextContentForBrowser.js");
 var setInnerHTML = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/setInnerHTML.js");
 
@@ -20236,9 +20236,9 @@ var ReactCurrentOwner = __webpack_require__("./node_modules/_react@15.6.2@react/
 var REACT_ELEMENT_TYPE = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/ReactElementSymbol.js");
 
 var getIteratorFn = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/getIteratorFn.js");
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 var KeyEscapeUtils = __webpack_require__("./node_modules/_react-dom@15.6.2@react-dom/lib/KeyEscapeUtils.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var SEPARATOR = '.';
 var SUBSEPARATOR = ':';
@@ -20413,8 +20413,8 @@ module.exports = traverseAllChildren;
 
 var _assign = __webpack_require__("./node_modules/_object-assign@4.1.1@object-assign/index.js");
 
-var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/emptyFunction.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/emptyFunction.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var validateDOMNesting = emptyFunction;
 
@@ -20853,7 +20853,7 @@ module.exports = KeyEscapeUtils;
 
 var _prodInvariant = __webpack_require__("./node_modules/_react@15.6.2@react/lib/reactProdInvariant.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 /**
  * Static poolers. Several custom versions for each potential number of
@@ -21110,8 +21110,8 @@ var _prodInvariant = __webpack_require__("./node_modules/_react@15.6.2@react/lib
 var ReactNoopUpdateQueue = __webpack_require__("./node_modules/_react@15.6.2@react/lib/ReactNoopUpdateQueue.js");
 
 var canDefineProperty = __webpack_require__("./node_modules/_react@15.6.2@react/lib/canDefineProperty.js");
-var emptyObject = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/emptyObject.js");
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var emptyObject = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/emptyObject.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 var lowPriorityWarning = __webpack_require__("./node_modules/_react@15.6.2@react/lib/lowPriorityWarning.js");
 
 /**
@@ -21255,7 +21255,7 @@ module.exports = {
 var PooledClass = __webpack_require__("./node_modules/_react@15.6.2@react/lib/PooledClass.js");
 var ReactElement = __webpack_require__("./node_modules/_react@15.6.2@react/lib/ReactElement.js");
 
-var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/emptyFunction.js");
+var emptyFunction = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/emptyFunction.js");
 var traverseAllChildren = __webpack_require__("./node_modules/_react@15.6.2@react/lib/traverseAllChildren.js");
 
 var twoArgumentPooler = PooledClass.twoArgumentPooler;
@@ -21452,8 +21452,8 @@ var _prodInvariant = __webpack_require__("./node_modules/_react@15.6.2@react/lib
 
 var ReactCurrentOwner = __webpack_require__("./node_modules/_react@15.6.2@react/lib/ReactCurrentOwner.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 function isNative(fn) {
   // Based on isNative() from Lodash
@@ -22042,7 +22042,7 @@ var _assign = __webpack_require__("./node_modules/_object-assign@4.1.1@object-as
 
 var ReactCurrentOwner = __webpack_require__("./node_modules/_react@15.6.2@react/lib/ReactCurrentOwner.js");
 
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 var canDefineProperty = __webpack_require__("./node_modules/_react@15.6.2@react/lib/canDefineProperty.js");
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
@@ -22423,7 +22423,7 @@ var checkReactTypeSpec = __webpack_require__("./node_modules/_react@15.6.2@react
 
 var canDefineProperty = __webpack_require__("./node_modules/_react@15.6.2@react/lib/canDefineProperty.js");
 var getIteratorFn = __webpack_require__("./node_modules/_react@15.6.2@react/lib/getIteratorFn.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 var lowPriorityWarning = __webpack_require__("./node_modules/_react@15.6.2@react/lib/lowPriorityWarning.js");
 
 function getDeclarationErrorAddendum() {
@@ -22668,7 +22668,7 @@ module.exports = ReactElementValidator;
 
 
 
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 function warnNoop(publicInstance, callerName) {
   if (process.env.NODE_ENV !== 'production') {
@@ -22801,7 +22801,7 @@ module.exports = ReactPropTypeLocationNames;
 var _require = __webpack_require__("./node_modules/_react@15.6.2@react/lib/ReactElement.js"),
     isValidElement = _require.isValidElement;
 
-var factory = __webpack_require__("./node_modules/_prop-types@15.6.0@prop-types/factory.js");
+var factory = __webpack_require__("./node_modules/_prop-types@15.6.1@prop-types/factory.js");
 
 module.exports = factory(isValidElement);
 
@@ -22896,8 +22896,8 @@ var _prodInvariant = __webpack_require__("./node_modules/_react@15.6.2@react/lib
 var ReactPropTypeLocationNames = __webpack_require__("./node_modules/_react@15.6.2@react/lib/ReactPropTypeLocationNames.js");
 var ReactPropTypesSecret = __webpack_require__("./node_modules/_react@15.6.2@react/lib/ReactPropTypesSecret.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var ReactComponentTreeHook;
 
@@ -23153,7 +23153,7 @@ var _prodInvariant = __webpack_require__("./node_modules/_react@15.6.2@react/lib
 
 var ReactElement = __webpack_require__("./node_modules/_react@15.6.2@react/lib/ReactElement.js");
 
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 
 /**
  * Returns the first child in a collection of children and verifies that there
@@ -23242,9 +23242,9 @@ var ReactCurrentOwner = __webpack_require__("./node_modules/_react@15.6.2@react/
 var REACT_ELEMENT_TYPE = __webpack_require__("./node_modules/_react@15.6.2@react/lib/ReactElementSymbol.js");
 
 var getIteratorFn = __webpack_require__("./node_modules/_react@15.6.2@react/lib/getIteratorFn.js");
-var invariant = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js");
+var invariant = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/invariant.js");
 var KeyEscapeUtils = __webpack_require__("./node_modules/_react@15.6.2@react/lib/KeyEscapeUtils.js");
-var warning = __webpack_require__("./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js");
+var warning = __webpack_require__("./node_modules/_fbjs@0.8.17@fbjs/lib/warning.js");
 
 var SEPARATOR = '.';
 var SUBSEPARATOR = ':';
@@ -23968,7 +23968,8 @@ var Slider = function (_Component) {
             dotStyle: _extends({}, defaultSettings.dotStyle, props.dotStyle, {
                 display: !!props.vertical ? 'block' : 'inline-block'
             }),
-            curDotStyle: _extends({}, defaultSettings.curDotStyle, props.curDotStyle)
+            curDotStyle: _extends({}, defaultSettings.curDotStyle, props.curDotStyle),
+            isTransitionProperty: true
         });
         _this.timer = null; //定时器
         return _this;
@@ -23982,6 +23983,11 @@ var Slider = function (_Component) {
         value: function componentWillReceiveProps(nextProps) {
             if (this.props.autoPaly !== undefined && this.props.autoPaly === false) {
                 this.endSlider();
+            }
+            if (nextProps.sliderToShow !== undefined && nextProps.sliderToShow !== this.state.sliderToShow) {
+                this.setState({
+                    sliderToShow: nextProps.sliderToShow
+                });
             }
         }
 
@@ -23997,16 +24003,6 @@ var Slider = function (_Component) {
             var children = this.props.children;
 
             var _children = _react.Children.toArray(children);
-            var total = _react.Children.count(this.props.children) || 1;
-            var slidersStyle = {
-                width: this.state.vertical ? '100%' : total / this.state.sliderToShow * 100 + '%',
-                height: !this.state.vertical ? '100%' : total / this.state.sliderToShow * 100 + '%',
-                left: this.state.vertical ? '0px' : '-' + this.state.sliderIndex * 100 / this.state.sliderToShow + '%',
-                top: !this.state.vertical ? '0px' : '-' + this.state.sliderIndex * 100 / this.state.sliderToShow + '%',
-                transitionProperty: this.state.vertical ? 'top' : 'left',
-                transitionDuration: (this.state.speed || 0) + 'ms',
-                transitionTimingFunction: this.state.easing
-            };
             var DotsProp = {
                 vertical: this.state.vertical,
                 dots: this.state.dots,
@@ -24023,6 +24019,23 @@ var Slider = function (_Component) {
                 arrowsOnClick: this.arrowsOnClick,
                 arrowsY: this.state.arrowsY,
                 arrowRender: this.state.arrowRender
+            };
+            /* 如果不是一页一页滚动的  每页展示几个，就多赋值几个数组*/
+            if (this.state.sliderToShow !== 1 || this.state.sliderToScroll !== 1) {
+                _children = _children.concat(_children.slice(0, this.state.sliderToShow - 1));
+            }
+            // let total = Children.count(children) || 1;
+            var total = _children.length;
+            /* 是不是最后一个 */
+            var _isTransitionProperty = !(this.state.sliderIndex % total === 0);
+            var slidersStyle = {
+                width: this.state.vertical ? '100%' : total / this.state.sliderToShow * 100 + '%',
+                height: !this.state.vertical ? '100%' : total / this.state.sliderToShow * 100 + '%',
+                left: this.state.vertical ? '0px' : '-' + this.state.sliderIndex * 100 / this.state.sliderToShow + '%',
+                top: !this.state.vertical ? '0px' : '-' + this.state.sliderIndex * 100 / this.state.sliderToShow + '%',
+                transitionProperty: _isTransitionProperty ? this.state.vertical ? 'top' : 'left' : 'none',
+                transitionDuration: (this.state.speed || 0) + 'ms',
+                transitionTimingFunction: this.state.easing
             };
 
             return _react2.default.createElement(

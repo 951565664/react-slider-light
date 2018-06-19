@@ -100,6 +100,9 @@ Please replicate your issue with [CodeSandbox template](https://codesandbox.io/s
 #### 3.0.1
  `2018-2-25`
 -	修改bug
+#### 3.1.0
+ `2018-6-19`
+-	增加滚动到最后一张时，取消动画，即立刻回到第一张
 ## FAQ
 
 #### Will be updated regularly? 是否会经常更新

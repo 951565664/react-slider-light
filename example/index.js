@@ -19,15 +19,15 @@ const propToStringForCode = (obj) => {
 }
 const sliderList = [
     {
-        title: "基本",
-        info: '基本用法',
-        prop: {}
-    }, {
+        // title: "基本",
+        // info: '基本用法',
+        // prop: {}
+        // }, {
         title: "设置间隔和动画时长",
         info: '可以通过delay和speed设置间隔和动画时长',
         prop: {
-            delay: 3000,
-            speed: 3000,//ms
+            delay: 1000,
+            speed: 1000,//ms
         }
     }, {
         title: "分页符位置样式",

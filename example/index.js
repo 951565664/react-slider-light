@@ -110,6 +110,20 @@ const contentList = [
 ]
 
 export default class Wrapper extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            sliderIndex: 2,
+        }
+    }
+    beforeSliderCallback = (index) => {
+        console.log('index',index);
+        this.setState({
+            sliderIndex: index%2
+        })
+    }
+
 
     render() {
         return (
@@ -153,7 +167,29 @@ export default class Wrapper extends Component {
                         </div>
                     ))
                 }
-
+                <div className={styles.exampleBox} key={'last'}>
+                    <div className={styles.area}>
+                        <div className={styles.sliderBox}>
+                            <Slider sliderIndex={this.state.sliderIndex} beforeSliderCallback={this.beforeSliderCallback} >
+                                {
+                                    contentList.map((item, key) => {
+                                        let style = {
+                                            height: '100%',
+                                            textAlign: 'center',
+                                            backgroundColor: '#c4c515',
+                                            backgroundColor: `#${Math.floor(Math.random() * 16177215).toString(16)}`,
+                                            color: '#fff'
+                                        }
+                                        return (<div key={key} style={style}>{item.name}</div>)
+                                    })
+                                }
+                            </Slider >
+                        </div>
+                    </div>
+                    <div className={styles.area} >
+                        <Info title={'父组件控制 sliderIndex'} info={'利用 beforeSliderCallback 和 sliderIndex 进行对滑动的控制'} code={''} />
+                    </div>
+                </div>
             </div>
         )
     }

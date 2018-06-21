@@ -4,51 +4,45 @@ import Dots from './dots'
 import Arrows from './arrows'
 
 export default class Slider extends Component {
+    static defaultProps = {
+        defaultSliderIndex: 0,
+        sliderIndex: 0,
+        delay: 1800, //ms
+        speed: 500,//ms
+        sliderToShow: 1,//每次展示的页面
+        sliderToScroll: 1,//每次滚动的页面
+        autoPlay: true,
+        easing: 'ease',
+        isDots: false,
+        dots: 'circle',//gallery diamond square num()=>
+        dotStyle: {
+            listStyle: 'none',
+            display: 'inline-block',
+            margin: '8px',
+            cursor: 'pointer',
+            overflow: 'hidden'
+        },
+        curDotStyle: {
+
+        },
+        dotX: 'center',//'right' 'left' 'center' 20 30 -20 30
+        dotY: -25,//top center
+
+        isArrows: false,
+        arrowRender: undefined,//()=>
+        arrowsY: 'middle',
+        vertical: false,
+    }
     constructor(props) {
         super(props)
-        const defaultSettings = {
-            defaultSliderIndex: 0,
-            sliderIndex: 0,
-            delay: 1800, //ms
-            speed: 500,//ms
-            sliderToShow: 1,//每次展示的页面
-            sliderToScroll: 1,//每次滚动的页面
-            autoPaly: true,
-            easing: 'ease',
-            isDots: false,
-            dots: 'circle',//gallery diamond square num()=>
-            dotStyle: {
-                listStyle: 'none',
-                display: 'inline-block',
-                margin: '8px',
-                cursor: 'pointer',
-                overflow: 'hidden'
-            },
-            curDotStyle: {
-
-            },
-            dotX: 'center',//'right' 'left' 'center' 20 30 -20 30
-            dotY: -25,//top center
-
-            isArrows: false,
-            arrowRender: undefined,//()=>
-            arrowsY: 'middle',
-            vertical: false,
-        };
-
         this.state = {
-            ...defaultSettings,
-            ...props,
+            autoPlay: this.props.autoPlay,
             dotStyle: {
-                ...defaultSettings.dotStyle,
                 ...props.dotStyle,
                 display: !!props.vertical ? 'block' : 'inline-block',
             },
-            curDotStyle: {
-                ...defaultSettings.curDotStyle,
-                ...props.curDotStyle,
-            },
             isTransitionProperty: true,
+            sliderIndex: this.props.sliderIndex
         };
         this.timer = null; //定时器
     }
@@ -62,39 +56,57 @@ export default class Slider extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.autoPaly !== undefined && this.props.autoPaly === false) {
-            this.endSlider()
-        }
-        if (nextProps.sliderToShow !== undefined && nextProps.sliderToShow !== this.state.sliderToShow) {
+        /* 是否自动播放 */
+        if (nextProps.autoPlay !== undefined && nextProps.autoPlay !== this.state.autoPlay) {
             this.setState({
-                sliderToShow: nextProps.sliderToShow
-            })
+                autoPlay
+            }, this.beginSlider())
         }
+        console.log('nextProps.sliderIndex', nextProps.sliderIndex);
+        if (nextProps.sliderIndex && nextProps.sliderIndex !== this.state.sliderIndex) {
+            this.setState({
+                sliderIndex: nextProps.sliderIndex
+            }, )
+        }
+
     }
 
     /* 结束slider */
     endSlider = () => {
-        clearInterval(this.timer)
+        this.timer && clearInterval(this.timer)
     }
     /* 开始slider */
-    beginSlider = () => {
-        if (!this.state.autoPaly) {
+    beginSlider = (autoPlay = this.state.autoPlay) => {
+        if (!autoPlay) {
             return false;
         }
         this.endSlider()
         this.timer = setInterval(() => {
-            this.trun(this.state.sliderToScroll)
-        }, this.state.delay)
+            this.trun(this.props.sliderToScroll)
+        }, this.props.delay)
     }
 
     trun = (num) => {
         let total = Children.count(this.props.children) || 1
+        const { sliderIndex } = this.state;
 
-        let sliderIndex = ((this.state.sliderIndex + num + (Math.ceil(Math.abs(this.state.sliderIndex + num) / total) * total)) % total) % total;
+        let new_sliderIndex = ((sliderIndex + num + (Math.ceil(Math.abs(sliderIndex + num) / total) * total)) % total) % total;
+
+        /* 如果需要有 滑动之前的回调  */
+        console.log('a', this.props.beforeSliderCallback === 'function');
+        if (typeof(this.props.beforeSliderCallback) === 'function') {
+            this.props.beforeSliderCallback(sliderIndex)
+        }
 
         this.setState({
-            sliderIndex,
+            sliderIndex: new_sliderIndex,
+        }, () => {
+            /* 滑动之后的回调  */
+            if (typeof(this.props.afterSliderCallback) === 'function') {
+                this.props.afterSliderCallback(new_sliderIndex)
+            }
         })
+
     }
 
     dotsOnClick = (index) => {
@@ -114,59 +126,76 @@ export default class Slider extends Component {
         this.trun(num);
     }
     render() {
-        let { children } = this.props;
+        let {
+            vertical,
+            dots,
+            dotX,
+            dotY,
+            dotStyle,
+            curDotStyle,
+            arrowsY,
+            arrowRender,
+            sliderToShow,
+            speed,
+            easing,
+            isDots,
+            isArrows,
+            sliderToScroll,
+            children
+        } = this.props;
+
+        let { sliderIndex } = this.state;
         let _children = Children.toArray(children);
         let DotsProp = {
-            vertical: this.state.vertical,
-            dots: this.state.dots,
-            dotX: this.state.dotX,
-            dotY: this.state.dotY,
+            vertical,
+            dots,
+            dotX,
+            dotY,
             children: _children,
-            sliderIndex: this.state.sliderIndex,
-            dotStyle: this.state.dotStyle,
-            curDotStyle: this.state.curDotStyle,
+            sliderIndex,
+            dotStyle,
+            curDotStyle,
             dotsOnClick: this.dotsOnClick,
-            sliderToShow: this.props.sliderToShow,
+            sliderToShow,
         };
         let ArrowsProp = {
             arrowsOnClick: this.arrowsOnClick,
-            arrowsY: this.state.arrowsY,
-            arrowRender: this.state.arrowRender,
+            arrowsY,
+            arrowRender,
         };
         /* 如果不是一页一页滚动的  每页展示几个，就多赋值几个数组*/
-        if (this.state.sliderToShow !== 1 || this.state.sliderToScroll !== 1) {
-            _children = _children.concat(_children.slice(0, this.state.sliderToShow - 1))
+        if (sliderToShow !== 1 || sliderToScroll !== 1) {
+            _children = _children.concat(_children.slice(0, sliderToShow - 1))
         }
         // let total = Children.count(children) || 1;
         let total = _children.length;
         /* 是不是最后一个 */
-        let _isTransitionProperty = !(this.state.sliderIndex % total === 0);
+        let _isTransitionProperty = !(sliderIndex % total === 0);
         let slidersStyle = {
-            width: this.state.vertical ? '100%' : `${total / this.state.sliderToShow * 100}%`,
-            height: !this.state.vertical ? '100%' : `${total / this.state.sliderToShow * 100}%`,
-            left: this.state.vertical ? '0px' : `-${this.state.sliderIndex * 100 / this.state.sliderToShow}%`,
-            top: !this.state.vertical ? '0px' : `-${this.state.sliderIndex * 100 / this.state.sliderToShow}%`,
-            transitionProperty: _isTransitionProperty ? (this.state.vertical ? 'top' : 'left') : 'none',
-            transitionDuration: `${this.state.speed || 0}ms`,
-            transitionTimingFunction: this.state.easing
+            width: vertical ? '100%' : `${total / sliderToShow * 100}%`,
+            height: !vertical ? '100%' : `${total / sliderToShow * 100}%`,
+            left: vertical ? '0px' : `-${sliderIndex * 100 / sliderToShow}%`,
+            top: !vertical ? '0px' : `-${sliderIndex * 100 / sliderToShow}%`,
+            transitionProperty: _isTransitionProperty ? (vertical ? 'top' : 'left') : 'none',
+            transitionDuration: `${speed || 0}ms`,
+            transitionTimingFunction: easing
         };
-
 
         return (
             <div className={styles.sliderBox} style={{}} onMouseOut={this.onMouseOut} onMouseOver={this.onMouseOver}>
                 <ul className={styles.sliders} style={slidersStyle}>
                     {
                         _children.map((child, key) => <li style={{
-                            width: this.state.vertical ? '100%' : `${100 / (total)}%`,
-                            height: !this.state.vertical ? '100%' : `${100 / (total)}%`,
+                            width: vertical ? '100%' : `${100 / (total)}%`,
+                            height: !vertical ? '100%' : `${100 / (total)}%`,
                         }} key={key}>{child}</li>)
                     }
                 </ul>
                 {
-                    this.state.isDots && <Dots {...DotsProp} />
+                    isDots && <Dots {...DotsProp} />
                 }
                 {
-                    this.state.isArrows && <Arrows {...ArrowsProp} />
+                    isArrows && <Arrows {...ArrowsProp} />
                 }
             </div>
         )

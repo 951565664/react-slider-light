@@ -103,6 +103,13 @@ Please replicate your issue with [CodeSandbox template](https://codesandbox.io/s
 #### 3.1.0
  `2018-6-19`
 -	增加滚动到最后一张时，取消动画，即立刻回到第一张
+#### 4.0.0(已删)
+ `2018-6-21`
+-	修改处理props值的方式，提高性能，修改sliderIndex的bug,。
+#### 4.0.1
+ `2018-6-22`
+-	增加beforeSliderCallback 和 afterSliderCallback两个props。
+
 ## FAQ
 
 #### Will be updated regularly? 是否会经常更新

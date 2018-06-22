@@ -7,7 +7,7 @@ export default class Slider extends Component {
     static defaultProps = {
         defaultSliderIndex: 0,
         sliderIndex: 0,
-        delay: 1800, //ms
+        delay: 2800, //ms
         speed: 500,//ms
         sliderToShow: 1,//每次展示的页面
         sliderToScroll: 1,//每次滚动的页面
@@ -15,13 +15,6 @@ export default class Slider extends Component {
         easing: 'ease',
         isDots: false,
         dots: 'circle',//gallery diamond square num()=>
-        dotStyle: {
-            listStyle: 'none',
-            display: 'inline-block',
-            margin: '8px',
-            cursor: 'pointer',
-            overflow: 'hidden'
-        },
         curDotStyle: {
 
         },
@@ -38,6 +31,11 @@ export default class Slider extends Component {
         this.state = {
             autoPlay: this.props.autoPlay,
             dotStyle: {
+                listStyle: 'none',
+                display: 'inline-block',
+                margin: '8px',
+                cursor: 'pointer',
+                overflow: 'hidden',
                 ...props.dotStyle,
                 display: !!props.vertical ? 'block' : 'inline-block',
             },
@@ -63,6 +61,7 @@ export default class Slider extends Component {
             }, this.beginSlider())
         }
         console.log('nextProps.sliderIndex', nextProps.sliderIndex);
+        console.log('this.state.sliderIndex', this.state.sliderIndex);
         if (nextProps.sliderIndex && nextProps.sliderIndex !== this.state.sliderIndex) {
             this.setState({
                 sliderIndex: nextProps.sliderIndex
@@ -93,20 +92,19 @@ export default class Slider extends Component {
         let new_sliderIndex = ((sliderIndex + num + (Math.ceil(Math.abs(sliderIndex + num) / total) * total)) % total) % total;
 
         /* 如果需要有 滑动之前的回调  */
-        console.log('a', this.props.beforeSliderCallback === 'function');
-        if (typeof(this.props.beforeSliderCallback) === 'function') {
-            this.props.beforeSliderCallback(sliderIndex)
+        // console.log('a', typeof (this.props.beforeSliderCallback) === 'function');
+        if (typeof (this.props.beforeSliderCallback) === 'function') {
+            new_sliderIndex = this.props.beforeSliderCallback(sliderIndex, new_sliderIndex) || new_sliderIndex
         }
 
         this.setState({
             sliderIndex: new_sliderIndex,
         }, () => {
             /* 滑动之后的回调  */
-            if (typeof(this.props.afterSliderCallback) === 'function') {
+            if (typeof (this.props.afterSliderCallback) === 'function') {
                 this.props.afterSliderCallback(new_sliderIndex)
             }
         })
-
     }
 
     dotsOnClick = (index) => {
@@ -131,7 +129,6 @@ export default class Slider extends Component {
             dots,
             dotX,
             dotY,
-            dotStyle,
             curDotStyle,
             arrowsY,
             arrowRender,
@@ -144,7 +141,8 @@ export default class Slider extends Component {
             children
         } = this.props;
 
-        let { sliderIndex } = this.state;
+        let { sliderIndex, dotStyle } = this.state;
+        console.log('sliderIndexsss', sliderIndex)
         let _children = Children.toArray(children);
         let DotsProp = {
             vertical,

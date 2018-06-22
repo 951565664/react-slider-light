@@ -7,7 +7,7 @@ export default class Dots extends Component {
         if (this.props.vertical) {
             style = {
                 // height: '100%',
-
+                position: 'absolute'
             }
             if (typeof (this.props.dotY) === 'string') {
                 switch (this.props.dotY) {
@@ -20,9 +20,9 @@ export default class Dots extends Component {
                     case 'middle':
                         style = {
                             ...style,
-                            top:'50%',
-                            transform:'translate(-50%,-50%)',
-                            msTransform:'translate(-50%,-50%)',
+                            top: '50%',
+                            transform: 'translate(-50%,-50%)',
+                            msTransform: 'translate(-50%,-50%)',
                         }
                         break;
                     case 'bottom':
@@ -110,20 +110,20 @@ export default class Dots extends Component {
                     case 'center':
                         style = {
                             ...style,
-                            left:'50%',
-                            marginLeft:'-20px',
+                            left: '50%',
+                            marginLeft: '-20px',
                         }
                         break;
                     case 'left':
                         style = {
                             ...style,
-                            left:'20px',
+                            left: '20px',
                         }
                         break;
                     case 'right':
                         style = {
                             ...style,
-                            right:'20px',
+                            right: '20px',
                         }
                         break;
                     default:
@@ -134,7 +134,7 @@ export default class Dots extends Component {
                 if (this.props.dotX < 0) {
                     style = {
                         ...style,
-                        right:`${this.props.dotX * -1}px`,
+                        right: `${this.props.dotX * -1}px`,
                     }
                 } else {
                     style = {

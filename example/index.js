@@ -117,13 +117,15 @@ export default class Wrapper extends Component {
             sliderIndex: 2,
         }
     }
-    beforeSliderCallback = (index) => {
-        console.log('index',index);
+    beforeSliderCallback = (curSliderIndex, nextSliderIndex) => {
         this.setState({
-            sliderIndex: index%2
+            sliderIndex: nextSliderIndex % 2
         })
+        return nextSliderIndex % 2;
     }
-
+    afterSliderCallback = (sliderIndex) => {
+        console.log(sliderIndex)
+    }
 
     render() {
         return (
@@ -170,7 +172,8 @@ export default class Wrapper extends Component {
                 <div className={styles.exampleBox} key={'last'}>
                     <div className={styles.area}>
                         <div className={styles.sliderBox}>
-                            <Slider sliderIndex={this.state.sliderIndex} beforeSliderCallback={this.beforeSliderCallback} >
+                            <Slider isDots={true} sliderIndex={this.state.sliderIndex}
+                                beforeSliderCallback={this.beforeSliderCallback} afterSliderCallback={this.afterSliderCallback}>
                                 {
                                     contentList.map((item, key) => {
                                         let style = {

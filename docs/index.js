@@ -71,7 +71,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ed31323fe2effb87b545"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e436cb491c4f4cefde20"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -1003,6 +1003,14 @@ var sliderList = [{
     prop: {
         isDots: true,
         dots: 'gallery'
+    }
+}, {
+    title: "缩略图的分页符(垂直)",
+    info: '类似QQ音乐的那种',
+    prop: {
+        isDots: true,
+        dots: 'gallery',
+        vertical: true
     }
 }, {
     title: "分页符位置样式",
@@ -23704,7 +23712,17 @@ var Dots = function (_Component) {
                         });
                     }
                 }
+                if (_this.props.dots === 'gallery') {
+                    style = _extends({}, style, {
+                        width: '100%',
+                        height: '100%',
+                        bottom: 0
+                    });
+                }
             } else {
+                style = _extends({}, style, {
+                    height: '100%'
+                });
                 if (typeof _this.props.dotX === 'string') {
                     switch (_this.props.dotX) {
                         case 'center':
@@ -23784,6 +23802,15 @@ var Dots = function (_Component) {
                         });
                     }
                 }
+
+                if (_this.props.dots === 'gallery') {
+                    style = _extends({}, style, {
+                        // bottom: '0px',
+                        left: '0px',
+                        width: 100 / _this.props.children.length + '%',
+                        margin: 0
+                    });
+                }
             } else {
                 if (typeof _this.props.dotY === 'string') {
                     switch (_this.props.dotY) {
@@ -23818,12 +23845,13 @@ var Dots = function (_Component) {
                         });
                     }
                 }
-            }
 
-            if (_this.props.dots === 'gallery') {
-                style = _extends({}, style, {
-                    bottom: '0px'
-                });
+                if (_this.props.dots === 'gallery') {
+                    style = _extends({}, style, {
+                        bottom: '0px',
+                        height: 100 / _this.props.children.length + '%'
+                    });
+                }
             }
 
             return style;
@@ -23877,8 +23905,8 @@ var Dots = function (_Component) {
 
                             if (_this2.props.dots === 'gallery') {
                                 dotStyle = _extends({}, dotStyle, {
-                                    width: '25%',
-                                    height: '40px',
+                                    width: _this2.props.vertical ? '100%' : 100 / _this2.props.children.length + '%',
+                                    height: _this2.props.vertical ? 100 / _this2.props.children.length + '%' : '100%',
                                     margin: 0
                                 });
                                 curDotStyle = _extends({}, curDotStyle, {

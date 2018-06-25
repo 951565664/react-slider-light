@@ -49,7 +49,19 @@ export default class Dots extends Component {
                 }
 
             }
+            if (this.props.dots === 'gallery') {
+                style = {
+                    ...style,
+                    width:'100%',
+                    height: '100%',
+                    bottom: 0,
+                }
+            }
         } else {
+            style = {
+                ...style,
+                height: '100%'
+            };
             if (typeof (this.props.dotX) === 'string') {
                 switch (this.props.dotX) {
                     case 'center':
@@ -145,7 +157,15 @@ export default class Dots extends Component {
 
             }
 
-
+            if (this.props.dots === 'gallery') {
+                style = {
+                    ...style,
+                    // bottom: '0px',
+                    left: '0px',
+                    width: (100 / this.props.children.length) + '%',
+                    margin: 0,
+                }
+            }
         } else {
             if (typeof (this.props.dotY) === 'string') {
                 switch (this.props.dotY) {
@@ -186,12 +206,14 @@ export default class Dots extends Component {
                 }
 
             }
-        }
 
-        if (this.props.dots === 'gallery') {
-            style = {
-                ...style,
-                bottom: '0px'
+
+            if (this.props.dots === 'gallery') {
+                style = {
+                    ...style,
+                    bottom: '0px',
+                    height: (100 / this.props.children.length) + '%'
+                }
             }
         }
 
@@ -241,13 +263,13 @@ export default class Dots extends Component {
                                     if (this.props.dots === 'gallery') {
                                         dotStyle = {
                                             ...dotStyle,
-                                            width: '25%',
-                                            height: '40px',
+                                            width: (this.props.vertical) ? '100%' : (100 / this.props.children.length) + '%',
+                                            height: (this.props.vertical) ?  (100 / this.props.children.length) + '%':'100%',
                                             margin: 0
                                         }
                                         curDotStyle = {
                                             ...curDotStyle,
-                                            border:"1px solid #000"
+                                            border: "1px solid #000"
                                         }
                                         return (
                                             <li style={this.props.sliderIndex == key ? { ...dotStyle, ...curDotStyle } : dotStyle}

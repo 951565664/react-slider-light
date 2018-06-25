@@ -66,7 +66,6 @@ export default class Slider extends Component {
                 sliderIndex: nextProps.sliderIndex
             }, )
         }
-
     }
 
     /* 结束slider */
@@ -166,7 +165,7 @@ export default class Slider extends Component {
         /* 是不是最后一个 */
         const InnerSliderProps = {
             children: _children,
-            sliderIndex,sliderToShow,
+            sliderIndex, sliderToShow,
             speed,
             easing
         }

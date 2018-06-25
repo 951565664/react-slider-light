@@ -43,6 +43,14 @@ const sliderList = [
             dots: 'gallery',
         }
     }, {
+        title: "缩略图的分页符(垂直)",
+        info: '类似QQ音乐的那种',
+        prop: {
+            isDots: true,
+            dots: 'gallery',
+            vertical:true
+        }
+    }, {
         title: "分页符位置样式",
         info: '自定义分页符，可利用dots 和 dotStyle 定义样式',
         prop: {

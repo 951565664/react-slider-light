@@ -114,7 +114,7 @@ Please replicate your issue with [CodeSandbox template](https://codesandbox.io/s
 -	props里的dots增加gallery选项。
 #### 4.1.1
  `2018-6-25`
--	实现4.1.0 的gallery 不能垂直显示的问题。
+-	实现4.1.0的gallery不能垂直显示的问题。
 ## FAQ
 
 #### Will be updated regularly? 是否会经常更新

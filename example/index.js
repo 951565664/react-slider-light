@@ -9,11 +9,11 @@ import Slider from '../src'
 import ExampleCode from './components/exampleCode'
 import Info from './components/info'
 
-const getRandomColor = ( key ) => {
-    if(key == 0 ){
+const getRandomColor = (key) => {
+    if (key == 0) {
         return '#c4c511'
     }
-    return ['#c4c511','#005541','#D45541','#2ea8e5','#e52ece'][key]
+    return ['#c4c511', '#005541', '#D45541', '#2ea8e5', '#e52ece'][key]
 }
 const propToStringForCode = (obj) => {
     let rtnStr = '<Slider';
@@ -36,19 +36,19 @@ const sliderList = [
             speed: 1000,//ms
         }
     }, {
-        title: "缩略图的分页符",
-        info: '类似QQ音乐的那种',
+        title: "缩略图分页符",
+        info: '分页符是缩略图的情况',
         prop: {
             isDots: true,
             dots: 'gallery',
         }
     }, {
-        title: "缩略图的分页符(垂直)",
-        info: '类似QQ音乐的那种',
+        title: "缩略图分页符(垂直)",
+        info: '分页符是缩略图的情况(垂直)',
         prop: {
             isDots: true,
             dots: 'gallery',
-            vertical:true
+            vertical: true
         }
     }, {
         title: "分页符位置样式",

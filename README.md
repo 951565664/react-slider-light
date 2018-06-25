@@ -28,6 +28,7 @@ a lightweight Slider component built with [react](https://github.com/facebook/re
 * **Support gallery 支持缩略图**:Dots are gallery
 
 ![avatar](./readme/1.png)
+![avatar](./readme/2.png)
 
 ## Getting Started
 

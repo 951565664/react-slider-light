@@ -71,7 +71,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e436cb491c4f4cefde20"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4ecb9ce81c21fa724f72"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -998,15 +998,15 @@ var sliderList = [{
         speed: 1000 //ms
     }
 }, {
-    title: "缩略图的分页符",
-    info: '类似QQ音乐的那种',
+    title: "缩略图分页符",
+    info: '分页符是缩略图的情况',
     prop: {
         isDots: true,
         dots: 'gallery'
     }
 }, {
-    title: "缩略图的分页符(垂直)",
-    info: '类似QQ音乐的那种',
+    title: "缩略图分页符(垂直)",
+    info: '分页符是缩略图的情况(垂直)',
     prop: {
         isDots: true,
         dots: 'gallery',

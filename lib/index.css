@@ -8,21 +8,23 @@
 .sliderBox-1MmUg * {
   box-sizing: border-box;
 }
-.sliderBox-1MmUg .sliders--1VUu {
-  position: absolute;
-  overflow: hidden;
-}
-.sliderBox-1MmUg .sliders--1VUu li {
-  float: left;
-  list-style: none;
-}
 .dotBox-3zRnJ {
   position: absolute;
   width: 100%;
 }
 .dotBox-3zRnJ .dots-3rAdw {
   overflow: hidden;
+}
+.dotBox-3zRnJ .dots-3rAdw li {
+  position: relative;
+}
+.dotBox-3zRnJ .dots-3rAdw li .gallery-mask-5vMU9 {
   position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.6);
 }
 .arrows-1qk_3 {
   height: 100%;
@@ -41,4 +43,13 @@
 }
 .arrows-1qk_3 .right-2j20K {
   right: 0px;
+}
+.sliders-2DYvM {
+  box-sizing: border-box;
+  position: absolute;
+  overflow: hidden;
+}
+.sliders-2DYvM li {
+  float: left;
+  list-style: none;
 }

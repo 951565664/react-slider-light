@@ -71,7 +71,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "12ea05a2a3ba99c08238"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "ed31323fe2effb87b545"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -936,6 +936,12 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var getRandomColor = function getRandomColor(key) {
+    if (key == 0) {
+        return '#c4c511';
+    }
+    return ['#c4c511', '#005541', '#D45541', '#2ea8e5', '#e52ece'][key];
+};
 var propToStringForCode = function propToStringForCode(obj) {
     var rtnStr = '<Slider';
     var _iteratorNormalCompletion = true;
@@ -990,6 +996,13 @@ var sliderList = [{
     prop: {
         delay: 1000,
         speed: 1000 //ms
+    }
+}, {
+    title: "缩略图的分页符",
+    info: '类似QQ音乐的那种',
+    prop: {
+        isDots: true,
+        dots: 'gallery'
     }
 }, {
     title: "分页符位置样式",
@@ -1081,10 +1094,26 @@ var contentList = [{ name: 'content1' }, { name: 'content2' }, { name: 'content3
 var Wrapper = function (_Component) {
     _inherits(Wrapper, _Component);
 
-    function Wrapper() {
+    function Wrapper(props) {
         _classCallCheck(this, Wrapper);
 
-        return _possibleConstructorReturn(this, (Wrapper.__proto__ || Object.getPrototypeOf(Wrapper)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Wrapper.__proto__ || Object.getPrototypeOf(Wrapper)).call(this, props));
+
+        _this.beforeSliderCallback = function (curSliderIndex, nextSliderIndex) {
+            _this.setState({
+                sliderIndex: nextSliderIndex % 2
+            });
+            return nextSliderIndex % 2;
+        };
+
+        _this.afterSliderCallback = function (sliderIndex) {
+            console.log(sliderIndex);
+        };
+
+        _this.state = {
+            sliderIndex: 2
+        };
+        return _this;
     }
 
     _createClass(Wrapper, [{
@@ -1137,13 +1166,13 @@ var Wrapper = function (_Component) {
                                     _src2.default,
                                     prop,
                                     contentList.map(function (item, key) {
-                                        var _style;
-
-                                        var style = (_style = {
+                                        var style = {
                                             height: '100%',
                                             textAlign: 'center',
-                                            backgroundColor: '#c4c515'
-                                        }, _defineProperty(_style, 'backgroundColor', '#' + Math.floor(Math.random() * 16177215).toString(16)), _defineProperty(_style, 'color', '#fff'), _style);
+                                            backgroundColor: getRandomColor(key),
+                                            color: '#fff'
+                                        };
+                                        console.log(style.backgroundColor);
                                         return _react2.default.createElement(
                                             'div',
                                             { key: key, style: style },
@@ -1159,7 +1188,43 @@ var Wrapper = function (_Component) {
                             _react2.default.createElement(_info2.default, { title: title, info: info, code: code })
                         )
                     );
-                })
+                }),
+                _react2.default.createElement(
+                    'div',
+                    { className: _index2.default.exampleBox, key: 'last' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: _index2.default.area },
+                        _react2.default.createElement(
+                            'div',
+                            { className: _index2.default.sliderBox },
+                            _react2.default.createElement(
+                                _src2.default,
+                                { isDots: true, sliderIndex: this.state.sliderIndex,
+                                    beforeSliderCallback: this.beforeSliderCallback, afterSliderCallback: this.afterSliderCallback },
+                                contentList.map(function (item, key) {
+                                    var _style;
+
+                                    var style = (_style = {
+                                        height: '100%',
+                                        textAlign: 'center',
+                                        backgroundColor: '#c4c515'
+                                    }, _defineProperty(_style, 'backgroundColor', getRandomColor(key)), _defineProperty(_style, 'color', '#fff'), _style);
+                                    return _react2.default.createElement(
+                                        'div',
+                                        { key: key, style: style },
+                                        item.name
+                                    );
+                                })
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: _index2.default.area },
+                        _react2.default.createElement(_info2.default, { title: '父组件控制 sliderIndex', info: '利用 beforeSliderCallback 和 sliderIndex 进行对滑动的控制', code: '' })
+                    )
+                )
             );
         }
     }]);
@@ -23603,7 +23668,7 @@ var Dots = function (_Component) {
             if (_this.props.vertical) {
                 style = {
                     // height: '100%',
-
+                    position: 'absolute'
                 };
                 if (typeof _this.props.dotY === 'string') {
                     switch (_this.props.dotY) {
@@ -23754,6 +23819,13 @@ var Dots = function (_Component) {
                     }
                 }
             }
+
+            if (_this.props.dots === 'gallery') {
+                style = _extends({}, style, {
+                    bottom: '0px'
+                });
+            }
+
             return style;
         }, _this.dotsOnClick = function (index) {
             if (typeof _this.props.dotsOnClick === 'function') {
@@ -23771,7 +23843,8 @@ var Dots = function (_Component) {
             var dotsStyle = this.getDotsStyle();
             var _props = this.props,
                 dotStyle = _props.dotStyle,
-                curDotStyle = _props.curDotStyle;
+                curDotStyle = _props.curDotStyle,
+                children = _props.children;
 
             return _react2.default.createElement(
                 'div',
@@ -23779,7 +23852,7 @@ var Dots = function (_Component) {
                 _react2.default.createElement(
                     'ul',
                     { className: _index2.default.dots, style: dotsStyle },
-                    this.props.children.map(function (child, key) {
+                    children.map(function (child, key) {
                         //gallery diamond square num()=>
                         if (typeof _this2.props.dots === 'function') {
                             return _react2.default.createElement(
@@ -23801,22 +23874,36 @@ var Dots = function (_Component) {
                             curDotStyle = _extends({}, curDotStyle, {
                                 backgroundColor: '#000'
                             });
-                            switch (_this2.props.dots) {
-                                case 'circle':
-                                    {
-                                        dotStyle = _extends({}, dotStyle, {
-                                            borderRadius: '50%'
-                                        });
-                                    }
-                                case 'square':
-                                    {}
-                                default:
-                                    break;
+
+                            if (_this2.props.dots === 'gallery') {
+                                dotStyle = _extends({}, dotStyle, {
+                                    width: '25%',
+                                    height: '40px',
+                                    margin: 0
+                                });
+                                curDotStyle = _extends({}, curDotStyle, {
+                                    border: "1px solid #000"
+                                });
+                                return _react2.default.createElement(
+                                    'li',
+                                    { style: _this2.props.sliderIndex == key ? _extends({}, dotStyle, curDotStyle) : dotStyle,
+                                        key: key, onClick: function onClick() {
+                                            return _this2.dotsOnClick(key);
+                                        } },
+                                    child,
+                                    _this2.props.sliderIndex !== key && _react2.default.createElement('div', { className: _index2.default["gallery-mask"] })
+                                );
+                            } else {
+                                if (_this2.props.dots === 'circle') {
+                                    dotStyle = _extends({}, dotStyle, {
+                                        borderRadius: '50%'
+                                    });
+                                }
+                                return _react2.default.createElement('li', { style: _this2.props.sliderIndex == key ? _extends({}, dotStyle, curDotStyle) : dotStyle,
+                                    key: key, onClick: function onClick() {
+                                        return _this2.dotsOnClick(key);
+                                    } });
                             }
-                            return _react2.default.createElement('li', { style: _this2.props.sliderIndex == key ? _extends({}, dotStyle, curDotStyle) : dotStyle,
-                                key: key, onClick: function onClick() {
-                                    return _this2.dotsOnClick(key);
-                                } });
                         }
                     })
                 )
@@ -23835,7 +23922,7 @@ exports.default = Dots;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"dotBox":"dotBox-3zRnJ","dots":"dots-3rAdw"};
+module.exports = {"dotBox":"dotBox-3zRnJ","dots":"dots-3rAdw","gallery-mask":"gallery-mask-5vMU9"};
 
 /***/ }),
 
@@ -23869,6 +23956,10 @@ var _arrows = __webpack_require__("./src/arrows/index.js");
 
 var _arrows2 = _interopRequireDefault(_arrows);
 
+var _innerSlider = __webpack_require__("./src/innerSlider/index.js");
+
+var _innerSlider2 = _interopRequireDefault(_innerSlider);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23894,26 +23985,40 @@ var Slider = function (_Component) {
         };
 
         _this.endSlider = function () {
-            clearInterval(_this.timer);
+            _this.timer && clearInterval(_this.timer);
         };
 
         _this.beginSlider = function () {
-            if (!_this.state.autoPaly) {
+            var autoPlay = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _this.state.autoPlay;
+
+            if (!autoPlay) {
                 return false;
             }
             _this.endSlider();
             _this.timer = setInterval(function () {
-                _this.trun(_this.state.sliderToScroll);
-            }, _this.state.delay);
+                _this.trun(_this.props.sliderToScroll);
+            }, _this.props.delay);
         };
 
         _this.trun = function (num) {
             var total = _react.Children.count(_this.props.children) || 1;
+            var sliderIndex = _this.state.sliderIndex;
 
-            var sliderIndex = (_this.state.sliderIndex + num + Math.ceil(Math.abs(_this.state.sliderIndex + num) / total) * total) % total % total;
+
+            var new_sliderIndex = (sliderIndex + num + Math.ceil(Math.abs(sliderIndex + num) / total) * total) % total % total;
+
+            /* 如果需要有 滑动之前的回调  */
+            if (typeof _this.props.beforeSliderCallback === 'function') {
+                new_sliderIndex = _this.props.beforeSliderCallback(sliderIndex, new_sliderIndex) || new_sliderIndex;
+            }
 
             _this.setState({
-                sliderIndex: sliderIndex
+                sliderIndex: new_sliderIndex
+            }, function () {
+                /* 滑动之后的回调  */
+                if (typeof _this.props.afterSliderCallback === 'function') {
+                    _this.props.afterSliderCallback(new_sliderIndex);
+                }
             });
         };
 
@@ -23936,41 +24041,20 @@ var Slider = function (_Component) {
             _this.trun(num);
         };
 
-        var defaultSettings = {
-            defaultSliderIndex: 0,
-            sliderIndex: 0,
-            delay: 1800, //ms
-            speed: 500, //ms
-            sliderToShow: 1, //每次展示的页面
-            sliderToScroll: 1, //每次滚动的页面
-            autoPaly: true,
-            easing: 'ease',
-            isDots: false,
-            dots: 'circle', //gallery diamond square num()=>
-            dotStyle: {
+        _this.state = {
+            autoPlay: _this.props.autoPlay,
+            dotStyle: _extends({
                 listStyle: 'none',
                 display: 'inline-block',
                 margin: '8px',
                 cursor: 'pointer',
                 overflow: 'hidden'
-            },
-            curDotStyle: {},
-            dotX: 'center', //'right' 'left' 'center' 20 30 -20 30
-            dotY: -25, //top center
-
-            isArrows: false,
-            arrowRender: undefined, //()=>
-            arrowsY: 'middle',
-            vertical: false
-        };
-
-        _this.state = _extends({}, defaultSettings, props, {
-            dotStyle: _extends({}, defaultSettings.dotStyle, props.dotStyle, {
+            }, props.dotStyle, {
                 display: !!props.vertical ? 'block' : 'inline-block'
             }),
-            curDotStyle: _extends({}, defaultSettings.curDotStyle, props.curDotStyle),
-            isTransitionProperty: true
-        });
+            isTransitionProperty: true,
+            sliderIndex: _this.props.sliderIndex
+        };
         _this.timer = null; //定时器
         return _this;
     }
@@ -23981,12 +24065,15 @@ var Slider = function (_Component) {
     }, {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps) {
-            if (this.props.autoPaly !== undefined && this.props.autoPaly === false) {
-                this.endSlider();
-            }
-            if (nextProps.sliderToShow !== undefined && nextProps.sliderToShow !== this.state.sliderToShow) {
+            /* 是否自动播放 */
+            if (nextProps.autoPlay !== undefined && nextProps.autoPlay !== this.state.autoPlay) {
                 this.setState({
-                    sliderToShow: nextProps.sliderToShow
+                    autoPlay: autoPlay
+                }, this.beginSlider());
+            }
+            if (nextProps.sliderIndex && nextProps.sliderIndex !== this.state.sliderIndex) {
+                this.setState({
+                    sliderIndex: nextProps.sliderIndex
                 });
             }
         }
@@ -23998,65 +24085,61 @@ var Slider = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
-
-            var children = this.props.children;
+            var _props = this.props,
+                vertical = _props.vertical,
+                dots = _props.dots,
+                dotX = _props.dotX,
+                dotY = _props.dotY,
+                curDotStyle = _props.curDotStyle,
+                arrowsY = _props.arrowsY,
+                arrowRender = _props.arrowRender,
+                sliderToShow = _props.sliderToShow,
+                speed = _props.speed,
+                easing = _props.easing,
+                isDots = _props.isDots,
+                isArrows = _props.isArrows,
+                sliderToScroll = _props.sliderToScroll,
+                children = _props.children;
+            var _state = this.state,
+                sliderIndex = _state.sliderIndex,
+                dotStyle = _state.dotStyle;
 
             var _children = _react.Children.toArray(children);
             var DotsProp = {
-                vertical: this.state.vertical,
-                dots: this.state.dots,
-                dotX: this.state.dotX,
-                dotY: this.state.dotY,
+                vertical: vertical,
+                dots: dots,
+                dotX: dotX,
+                dotY: dotY,
                 children: _children,
-                sliderIndex: this.state.sliderIndex,
-                dotStyle: this.state.dotStyle,
-                curDotStyle: this.state.curDotStyle,
+                sliderIndex: sliderIndex,
+                dotStyle: dotStyle,
+                curDotStyle: curDotStyle,
                 dotsOnClick: this.dotsOnClick,
-                sliderToShow: this.props.sliderToShow
+                sliderToShow: sliderToShow
             };
             var ArrowsProp = {
                 arrowsOnClick: this.arrowsOnClick,
-                arrowsY: this.state.arrowsY,
-                arrowRender: this.state.arrowRender
+                arrowsY: arrowsY,
+                arrowRender: arrowRender
             };
             /* 如果不是一页一页滚动的  每页展示几个，就多赋值几个数组*/
-            if (this.state.sliderToShow !== 1 || this.state.sliderToScroll !== 1) {
-                _children = _children.concat(_children.slice(0, this.state.sliderToShow - 1));
+            if (sliderToShow !== 1 || sliderToScroll !== 1) {
+                _children = _children.concat(_children.slice(0, sliderToShow - 1));
             }
-            // let total = Children.count(children) || 1;
-            var total = _children.length;
-            /* 是不是最后一个 */
-            var _isTransitionProperty = !(this.state.sliderIndex % total === 0);
-            var slidersStyle = {
-                width: this.state.vertical ? '100%' : total / this.state.sliderToShow * 100 + '%',
-                height: !this.state.vertical ? '100%' : total / this.state.sliderToShow * 100 + '%',
-                left: this.state.vertical ? '0px' : '-' + this.state.sliderIndex * 100 / this.state.sliderToShow + '%',
-                top: !this.state.vertical ? '0px' : '-' + this.state.sliderIndex * 100 / this.state.sliderToShow + '%',
-                transitionProperty: _isTransitionProperty ? this.state.vertical ? 'top' : 'left' : 'none',
-                transitionDuration: (this.state.speed || 0) + 'ms',
-                transitionTimingFunction: this.state.easing
-            };
 
+            /* 是不是最后一个 */
+            var InnerSliderProps = {
+                children: _children,
+                sliderIndex: sliderIndex, sliderToShow: sliderToShow,
+                speed: speed,
+                easing: easing
+            };
             return _react2.default.createElement(
                 'div',
                 { className: _index2.default.sliderBox, style: {}, onMouseOut: this.onMouseOut, onMouseOver: this.onMouseOver },
-                _react2.default.createElement(
-                    'ul',
-                    { className: _index2.default.sliders, style: slidersStyle },
-                    _children.map(function (child, key) {
-                        return _react2.default.createElement(
-                            'li',
-                            { style: {
-                                    width: _this2.state.vertical ? '100%' : 100 / total + '%',
-                                    height: !_this2.state.vertical ? '100%' : 100 / total + '%'
-                                }, key: key },
-                            child
-                        );
-                    })
-                ),
-                this.state.isDots && _react2.default.createElement(_dots2.default, DotsProp),
-                this.state.isArrows && _react2.default.createElement(_arrows2.default, ArrowsProp)
+                _children.length > 0 && _react2.default.createElement(_innerSlider2.default, InnerSliderProps),
+                isDots && _react2.default.createElement(_dots2.default, DotsProp),
+                isArrows && _react2.default.createElement(_arrows2.default, ArrowsProp)
             );
         }
     }]);
@@ -24064,6 +24147,26 @@ var Slider = function (_Component) {
     return Slider;
 }(_react.Component);
 
+Slider.defaultProps = {
+    defaultSliderIndex: 0,
+    sliderIndex: 0,
+    delay: 2800, //ms
+    speed: 500, //ms
+    sliderToShow: 1, //每次展示的页面
+    sliderToScroll: 1, //每次滚动的页面
+    autoPlay: true,
+    easing: 'ease',
+    isDots: false,
+    dots: 'circle', //gallery diamond square num()=>
+    curDotStyle: {},
+    dotX: 'center', //'right' 'left' 'center' 20 30 -20 30
+    dotY: -25, //top center
+
+    isArrows: false,
+    arrowRender: undefined, //()=>
+    arrowsY: 'middle',
+    vertical: false
+};
 exports.default = Slider;
 
 /***/ }),
@@ -24072,7 +24175,98 @@ exports.default = Slider;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"sliderBox":"sliderBox-1MmUg","sliders":"sliders--1VUu"};
+module.exports = {"sliderBox":"sliderBox-1MmUg"};
+
+/***/ }),
+
+/***/ "./src/innerSlider/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__("./node_modules/_react@15.6.2@react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _index = __webpack_require__("./src/innerSlider/index.less");
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var InnerSlider = function (_Component) {
+    _inherits(InnerSlider, _Component);
+
+    function InnerSlider() {
+        _classCallCheck(this, InnerSlider);
+
+        return _possibleConstructorReturn(this, (InnerSlider.__proto__ || Object.getPrototypeOf(InnerSlider)).apply(this, arguments));
+    }
+
+    _createClass(InnerSlider, [{
+        key: 'render',
+        value: function render() {
+            var _props = this.props,
+                children = _props.children,
+                vertical = _props.vertical,
+                sliderIndex = _props.sliderIndex,
+                sliderToShow = _props.sliderToShow,
+                speed = _props.speed,
+                easing = _props.easing;
+
+            var total = children.length;
+            var slidersStyle = {
+                width: vertical ? '100%' : total / sliderToShow * 100 + '%',
+                height: !vertical ? '100%' : total / sliderToShow * 100 + '%',
+                left: vertical ? '0px' : '-' + sliderIndex * 100 / sliderToShow + '%',
+                top: !vertical ? '0px' : '-' + sliderIndex * 100 / sliderToShow + '%',
+                transitionProperty: !(sliderIndex % total === 0) ? vertical ? 'top' : 'left' : 'none',
+                transitionDuration: (speed || 0) + 'ms',
+                transitionTimingFunction: easing
+            };
+
+            return _react2.default.createElement(
+                'ul',
+                { className: _index2.default.sliders, style: slidersStyle },
+                children.map(function (child, key) {
+                    return _react2.default.createElement(
+                        'li',
+                        { style: {
+                                width: vertical ? '100%' : 100 / total + '%',
+                                height: !vertical ? '100%' : 100 / total + '%'
+                            }, key: key },
+                        child
+                    );
+                })
+            );
+        }
+    }]);
+
+    return InnerSlider;
+}(_react.Component);
+
+exports.default = InnerSlider;
+
+/***/ }),
+
+/***/ "./src/innerSlider/index.less":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"sliders":"sliders-2DYvM"};
 
 /***/ })
 

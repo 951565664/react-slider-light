@@ -2,7 +2,17 @@
     position: absolute;
     width: 100%;
     .dots {
-        overflow: hidden;
-        // position: absolute;
+        overflow: hidden; // position: absolute;
+        li {
+            position: relative;
+            .gallery-mask {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(128, 128, 128, 0.6)
+            }
+        }
     }
 }

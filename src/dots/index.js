@@ -187,6 +187,14 @@ export default class Dots extends Component {
 
             }
         }
+
+        if (this.props.dots === 'gallery') {
+            style = {
+                ...style,
+                bottom: '0px'
+            }
+        }
+
         return style;
     }
     dotsOnClick = (index) => {
@@ -198,12 +206,12 @@ export default class Dots extends Component {
     render() {
         let dotBoxStyle = this.getDotBoxStyle();
         let dotsStyle = this.getDotsStyle();
-        let { dotStyle, curDotStyle } = this.props;
+        let { dotStyle, curDotStyle, children } = this.props;
         return (
             <div className={styles.dotBox} style={dotBoxStyle}>
                 <ul className={styles.dots} style={dotsStyle}>
                     {
-                        this.props.children.map(
+                        children.map(
                             (child, key) => {
                                 //gallery diamond square num()=>
                                 if (typeof (this.props.dots) === 'function') {
@@ -229,24 +237,43 @@ export default class Dots extends Component {
                                         ...curDotStyle,
                                         backgroundColor: '#000',
                                     };
-                                    switch (this.props.dots) {
-                                        case 'circle': {
+
+                                    if (this.props.dots === 'gallery') {
+                                        dotStyle = {
+                                            ...dotStyle,
+                                            width: '25%',
+                                            height: '40px',
+                                            margin: 0
+                                        }
+                                        curDotStyle = {
+                                            ...curDotStyle,
+                                            border:"1px solid #000"
+                                        }
+                                        return (
+                                            <li style={this.props.sliderIndex == key ? { ...dotStyle, ...curDotStyle } : dotStyle}
+                                                key={key} onClick={() => this.dotsOnClick(key)}>
+                                                {child}
+                                                {
+                                                    this.props.sliderIndex !== key && (
+                                                        <div className={styles["gallery-mask"]}></div>
+                                                    )
+                                                }
+                                            </li>
+                                        )
+                                    }
+                                    else {
+                                        if (this.props.dots === 'circle') {
                                             dotStyle = {
                                                 ...dotStyle,
                                                 borderRadius: '50%',
                                             }
                                         }
-                                        case 'square': {
-
-                                        }
-                                        default:
-                                            break;
+                                        return (
+                                            <li style={this.props.sliderIndex == key ? { ...dotStyle, ...curDotStyle } : dotStyle}
+                                                key={key} onClick={() => this.dotsOnClick(key)}>
+                                            </li>
+                                        )
                                     }
-                                    return (
-                                        <li style={this.props.sliderIndex == key ? { ...dotStyle, ...curDotStyle } : dotStyle}
-                                            key={key} onClick={() => this.dotsOnClick(key)}>
-                                        </li>
-                                    )
 
                                 }
 
@@ -254,7 +281,7 @@ export default class Dots extends Component {
                         )
                     }
                 </ul>
-            </div>
+            </div >
         )
     }
 }

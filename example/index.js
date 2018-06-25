@@ -9,6 +9,12 @@ import Slider from '../src'
 import ExampleCode from './components/exampleCode'
 import Info from './components/info'
 
+const getRandomColor = ( key ) => {
+    if(key == 0 ){
+        return '#c4c511'
+    }
+    return ['#c4c511','#005541','#D45541','#2ea8e5','#e52ece'][key]
+}
 const propToStringForCode = (obj) => {
     let rtnStr = '<Slider';
     for (let [key, value] of Object.entries(obj)) {
@@ -28,6 +34,13 @@ const sliderList = [
         prop: {
             delay: 1000,
             speed: 1000,//ms
+        }
+    }, {
+        title: "缩略图的分页符",
+        info: '类似QQ音乐的那种',
+        prop: {
+            isDots: true,
+            dots: 'gallery',
         }
     }, {
         title: "分页符位置样式",
@@ -153,10 +166,10 @@ export default class Wrapper extends Component {
                                                 let style = {
                                                     height: '100%',
                                                     textAlign: 'center',
-                                                    backgroundColor: '#c4c515',
-                                                    backgroundColor: `#${Math.floor(Math.random() * 16177215).toString(16)}`,
+                                                    backgroundColor: getRandomColor(key),
                                                     color: '#fff'
                                                 }
+                                                console.log(style.backgroundColor)
                                                 return (<div key={key} style={style}>{item.name}</div>)
                                             })
                                         }
@@ -180,7 +193,7 @@ export default class Wrapper extends Component {
                                             height: '100%',
                                             textAlign: 'center',
                                             backgroundColor: '#c4c515',
-                                            backgroundColor: `#${Math.floor(Math.random() * 16177215).toString(16)}`,
+                                            backgroundColor: getRandomColor(key),
                                             color: '#fff'
                                         }
                                         return (<div key={key} style={style}>{item.name}</div>)

@@ -2,6 +2,7 @@ import React, { Component, Children } from 'react'
 import styles from './index.less'
 import Dots from './dots'
 import Arrows from './arrows'
+import InnerSlider from './innerSlider'
 
 export default class Slider extends Component {
     static defaultProps = {
@@ -60,8 +61,6 @@ export default class Slider extends Component {
                 autoPlay
             }, this.beginSlider())
         }
-        console.log('nextProps.sliderIndex', nextProps.sliderIndex);
-        console.log('this.state.sliderIndex', this.state.sliderIndex);
         if (nextProps.sliderIndex && nextProps.sliderIndex !== this.state.sliderIndex) {
             this.setState({
                 sliderIndex: nextProps.sliderIndex
@@ -92,7 +91,6 @@ export default class Slider extends Component {
         let new_sliderIndex = ((sliderIndex + num + (Math.ceil(Math.abs(sliderIndex + num) / total) * total)) % total) % total;
 
         /* 如果需要有 滑动之前的回调  */
-        // console.log('a', typeof (this.props.beforeSliderCallback) === 'function');
         if (typeof (this.props.beforeSliderCallback) === 'function') {
             new_sliderIndex = this.props.beforeSliderCallback(sliderIndex, new_sliderIndex) || new_sliderIndex
         }
@@ -124,7 +122,7 @@ export default class Slider extends Component {
         this.trun(num);
     }
     render() {
-        let {
+        const {
             vertical,
             dots,
             dotX,
@@ -141,8 +139,7 @@ export default class Slider extends Component {
             children
         } = this.props;
 
-        let { sliderIndex, dotStyle } = this.state;
-        console.log('sliderIndexsss', sliderIndex)
+        const { sliderIndex, dotStyle } = this.state;
         let _children = Children.toArray(children);
         let DotsProp = {
             vertical,
@@ -165,30 +162,19 @@ export default class Slider extends Component {
         if (sliderToShow !== 1 || sliderToScroll !== 1) {
             _children = _children.concat(_children.slice(0, sliderToShow - 1))
         }
-        // let total = Children.count(children) || 1;
-        let total = _children.length;
-        /* 是不是最后一个 */
-        let _isTransitionProperty = !(sliderIndex % total === 0);
-        let slidersStyle = {
-            width: vertical ? '100%' : `${total / sliderToShow * 100}%`,
-            height: !vertical ? '100%' : `${total / sliderToShow * 100}%`,
-            left: vertical ? '0px' : `-${sliderIndex * 100 / sliderToShow}%`,
-            top: !vertical ? '0px' : `-${sliderIndex * 100 / sliderToShow}%`,
-            transitionProperty: _isTransitionProperty ? (vertical ? 'top' : 'left') : 'none',
-            transitionDuration: `${speed || 0}ms`,
-            transitionTimingFunction: easing
-        };
 
+        /* 是不是最后一个 */
+        const InnerSliderProps = {
+            children: _children,
+            sliderIndex,sliderToShow,
+            speed,
+            easing
+        }
         return (
             <div className={styles.sliderBox} style={{}} onMouseOut={this.onMouseOut} onMouseOver={this.onMouseOver}>
-                <ul className={styles.sliders} style={slidersStyle}>
-                    {
-                        _children.map((child, key) => <li style={{
-                            width: vertical ? '100%' : `${100 / (total)}%`,
-                            height: !vertical ? '100%' : `${100 / (total)}%`,
-                        }} key={key}>{child}</li>)
-                    }
-                </ul>
+                {
+                    _children.length > 0 && <InnerSlider {...InnerSliderProps} />
+                }
                 {
                     isDots && <Dots {...DotsProp} />
                 }

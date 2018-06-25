@@ -109,7 +109,9 @@ Please replicate your issue with [CodeSandbox template](https://codesandbox.io/s
 #### 4.0.1
  `2018-6-22`
 -	增加beforeSliderCallback 和 afterSliderCallback两个props。
-
+#### 4.1.0
+ `2018-6-25`
+-	增加beforeSliderCallback 和 afterSliderCallback两个props。
 ## FAQ
 
 #### Will be updated regularly? 是否会经常更新

@@ -25,7 +25,9 @@ a lightweight Slider component built with [react](https://github.com/facebook/re
 * **Easy to use 使用简单**: detailed documents and examples 详细的文档和例子
 * **Support custom 支持自定义**: Can change style,such as dots and arrows 能够改变样式位置，例如 分页符和箭头
 * **Support vertical 支持竖直**
+* **Support gallery 支持缩略图**:Dots are gallery
 
+![avatar](/readme/1.png)
 
 ## Getting Started
 

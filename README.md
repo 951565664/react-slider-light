@@ -111,7 +111,7 @@ Please replicate your issue with [CodeSandbox template](https://codesandbox.io/s
 -	增加beforeSliderCallback 和 afterSliderCallback两个props。
 #### 4.1.0
  `2018-6-25`
--	增加beforeSliderCallback 和 afterSliderCallback两个props。
+-	props里的dots增加gallery选项。
 ## FAQ
 
 #### Will be updated regularly? 是否会经常更新
@@ -127,8 +127,8 @@ No. 想多了老铁
 
 #### Add some basic function.增加一些基本功能
 
-<!-- * Scroll vertically 垂直滚动 -->
-* gallery 缩略图
+* Scroll vertically 垂直滚动(v2.0.3已实现)
+* gallery 缩略图(v4.1.0已实现)
 
 
 #### Want more?

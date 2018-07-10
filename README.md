@@ -130,6 +130,9 @@ Please replicate your issue with [CodeSandbox template](https://codesandbox.io/s
 
 No. 想多了老铁
 
+#### 其他的需求
+
+https://github.com/951565664/react-slider-light/issues/3
 ## Next
 
 #### Add some basic function.增加一些基本功能

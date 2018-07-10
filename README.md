@@ -46,6 +46,7 @@ $ npm install react-slider-light
 ```js
 import React, { Component } from 'react';
 import Slider from 'react-slider-light';
+import 'react-slider-light/lib/index.css';
 
 export default class Wrapper extends Component {
     render(){

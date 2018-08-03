@@ -1,24 +1,24 @@
-.sliderBox-1MmUg {
+.sliderBox-1OJBq {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.sliderBox-1MmUg,
-.sliderBox-1MmUg * {
+.sliderBox-1OJBq,
+.sliderBox-1OJBq * {
   box-sizing: border-box;
 }
-.dotBox-3zRnJ {
+.dotBox-1YDUw {
   position: absolute;
   width: 100%;
 }
-.dotBox-3zRnJ .dots-3rAdw {
+.dotBox-1YDUw .dots-GBEyp {
   overflow: hidden;
 }
-.dotBox-3zRnJ .dots-3rAdw li {
+.dotBox-1YDUw .dots-GBEyp li {
   position: relative;
 }
-.dotBox-3zRnJ .dots-3rAdw li .gallery-mask-5vMU9 {
+.dotBox-1YDUw .dots-GBEyp li .gallery-mask-32pLR {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -26,11 +26,11 @@
   height: 100%;
   background-color: rgba(128, 128, 128, 0.6);
 }
-.arrows-1qk_3 {
+.arrows-NXfdO {
   height: 100%;
   position: relative;
 }
-.arrows-1qk_3 .arrow-1kkS3 {
+.arrows-NXfdO .arrow-ikhpe {
   position: absolute;
   cursor: pointer;
   font-size: 48px;
@@ -38,18 +38,18 @@
   height: 50px;
   line-height: 50px;
 }
-.arrows-1qk_3 .left-3ackY {
+.arrows-NXfdO .left-jb-7m {
   left: 0px;
 }
-.arrows-1qk_3 .right-2j20K {
+.arrows-NXfdO .right-2C2jU {
   right: 0px;
 }
-.sliders-2DYvM {
+.sliders-2NHWu {
   box-sizing: border-box;
   position: absolute;
   overflow: hidden;
 }
-.sliders-2DYvM li {
+.sliders-2NHWu li {
   float: left;
   list-style: none;
 }

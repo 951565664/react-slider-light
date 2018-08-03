@@ -61,7 +61,11 @@ export default class Slider extends Component {
                 autoPlay
             }, this.beginSlider())
         }
-        if (nextProps.sliderIndex && nextProps.sliderIndex !== this.state.sliderIndex) {
+        if (
+            Number.isInteger(next.props.sliderIndex) &&
+            next.props.sliderIndex >= 0 &&
+            nextProps.sliderIndex !== this.state.sliderIndex
+        ) {
             this.setState({
                 sliderIndex: nextProps.sliderIndex
             }, )

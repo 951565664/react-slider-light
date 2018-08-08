@@ -1,6 +1,6 @@
 {
   "name": "react-slider-light",
-  "version": "4.1.1",
+  "version": "4.2.0",
   "description": "a light easy slider for react",
   "main": "./lib/index.js",
   "directories": {

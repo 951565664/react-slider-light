@@ -61,7 +61,8 @@ export default class Slider extends Component {
                 autoPlay
             }, this.beginSlider())
         }
-        if (nextProps.sliderIndex && nextProps.sliderIndex !== this.state.sliderIndex) {
+        /* 受控 */
+        if (typeof nextProps.sliderIndex === 'number' && nextProps.sliderIndex !== this.state.sliderIndex) {
             this.setState({
                 sliderIndex: nextProps.sliderIndex
             }, )
@@ -82,32 +83,41 @@ export default class Slider extends Component {
             this.trun(this.props.sliderToScroll)
         }, this.props.delay)
     }
-
+    /* 滑动几页 */
     trun = (num) => {
         let total = Children.count(this.props.children) || 1
         const { sliderIndex } = this.state;
 
         let new_sliderIndex = ((sliderIndex + num + (Math.ceil(Math.abs(sliderIndex + num) / total) * total)) % total) % total;
 
-        /* 如果需要有 滑动之前的回调  */
-        if (typeof (this.props.beforeSliderCallback) === 'function') {
-            new_sliderIndex = this.props.beforeSliderCallback(sliderIndex, new_sliderIndex) || new_sliderIndex
-        }
+        this.changeSliderIndex(new_sliderIndex)
 
+    }
+    /**
+     * 改变 SliderIndex
+     * @prop {number} new_sliderIndex 新的sliderIndex
+     * @prop {number} sliderIndex 旧的sliderIndex 默认是state中的
+     * @memberof Slider
+     */
+    changeSliderIndex = (new_sliderIndex, sliderIndex = this.state.sliderIndex) => {
+        const { beforeSliderCallback, afterSliderCallback } = this.props;
+        /* 滑动之前回调  */
+        if (typeof (beforeSliderCallback) === 'function') {
+            let rtn_sliderIndex = beforeSliderCallback(sliderIndex, new_sliderIndex);
+            new_sliderIndex = typeof (rtn_sliderIndex) === 'number' ? rtn_sliderIndex : new_sliderIndex
+        }
         this.setState({
             sliderIndex: new_sliderIndex,
         }, () => {
-            /* 滑动之后的回调  */
-            if (typeof (this.props.afterSliderCallback) === 'function') {
-                this.props.afterSliderCallback(new_sliderIndex)
+            /* 滑动之后回调 */
+            if (typeof (afterSliderCallback) === 'function') {
+                afterSliderCallback(new_sliderIndex)
             }
         })
     }
-
+    /* 分页符点击事件 */
     dotsOnClick = (index) => {
-        this.setState({
-            sliderIndex: index
-        })
+        this.changeSliderIndex(index)
     }
 
     onMouseOver = () => {
@@ -167,7 +177,8 @@ export default class Slider extends Component {
             children: _children,
             sliderIndex, sliderToShow,
             speed,
-            easing
+            easing,
+            vertical
         }
         return (
             <div className={styles.sliderBox} style={{}} onMouseOut={this.onMouseOut} onMouseOver={this.onMouseOver}>

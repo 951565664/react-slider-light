@@ -119,6 +119,10 @@ Please replicate your issue with [CodeSandbox template](https://codesandbox.io/s
 #### 4.1.1
  `2018-6-25`
 -	实现4.1.0的gallery不能垂直显示的问题。
+#### 4.2.0
+ `2018-6-25`
+-	修改4.1版本中受控功能中第一张（sliderIndex为0）的 [bug](https://github.com/951565664/react-slider-light/issues/4)。
+-	修改4.x版本后出现垂直滚动失效bug。
 ## FAQ
 
 #### Will be updated regularly? 是否会经常更新
@@ -140,7 +144,20 @@ https://github.com/951565664/react-slider-light/issues/3
 * Scroll vertically 垂直滚动(v2.0.3已实现)
 * gallery 缩略图(v4.1.0已实现)
 
+#### Contributing
 
+编译react-slider-light
+```bash 
+npm run buildPublish 
+```
+编译demo
+```bash 
+npm run build
+```
+启动demo
+```bash 
+npm run start
+```
 #### Want more?
 
 * [The author's other projects 作者的其他项目](https://github.com/951565664)

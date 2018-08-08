@@ -25,10 +25,10 @@ const propToStringForCode = (obj) => {
 }
 const sliderList = [
     {
-        // title: "基本",
-        // info: '基本用法',
-        // prop: {}
-        // }, {
+        title: "基本",
+        info: '基本用法',
+        prop: {}
+    }, {
         title: "设置间隔和动画时长",
         info: '可以通过delay和speed设置间隔和动画时长',
         prop: {
@@ -135,17 +135,22 @@ export default class Wrapper extends Component {
         super(props)
 
         this.state = {
-            sliderIndex: 2,
+            sliderIndex: 0,
+            number: 0
         }
     }
     beforeSliderCallback = (curSliderIndex, nextSliderIndex) => {
+        // let sliderIndex = nextSliderIndex % 2;
+        let sliderIndex = nextSliderIndex >= 2 ? 0 : nextSliderIndex;
         this.setState({
-            sliderIndex: nextSliderIndex % 2
+            sliderIndex
         })
-        return nextSliderIndex % 2;
+        return sliderIndex
     }
     afterSliderCallback = (sliderIndex) => {
-        console.log(sliderIndex)
+        this.setState({
+            number: sliderIndex
+        })
     }
 
     render() {
@@ -177,7 +182,6 @@ export default class Wrapper extends Component {
                                                     backgroundColor: getRandomColor(key),
                                                     color: '#fff'
                                                 }
-                                                console.log(style.backgroundColor)
                                                 return (<div key={key} style={style}>{item.name}</div>)
                                             })
                                         }
@@ -212,6 +216,7 @@ export default class Wrapper extends Component {
                     </div>
                     <div className={styles.area} >
                         <Info title={'父组件控制 sliderIndex'} info={'利用 beforeSliderCallback 和 sliderIndex 进行对滑动的控制'} code={''} />
+                        <p>目前是第<span className={styles.bold}>{this.state.number}</span>页</p>
                     </div>
                 </div>
             </div>
